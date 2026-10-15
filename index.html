@@ -87,11 +87,38 @@ const allMistris=[
 {name:"নাসির - রংপুর",skill:"রাজ মিস্ত্রি",zila:"রংপুর",lat:25.75,lng:89.25,phone:"01609035166",rating:4.8},
 {name:"হাসান - ময়মনসিংহ",skill:"স্যানিটারি",zila:"ময়মনসিংহ",lat:24.75,lng:90.40,phone:"01609035166",rating:4.9},
 ];
-ment.getElementById('mistriList');el.innerHTML="";list.forEach(m=>{el.innerHTML+=`<div class="bg-white p-4 rounded-xl shadow flex justify-between items-center"><div><b class="text-sm">${m.name}</b><br><span class="text-xs text-gray-600">${m.skill} | ${m.zila} | ⭐${m.rating}</span><br><span class="text-[11px] text-green-600">● Active</span></div><a href="tel:${m.phone}" class="bg-blue-600 text-white px-4 py-2 rounded-full text-xs font-bold">কল</a></div>`});document.getElementById('count').innerText=list.length;}
-function filterZila(){const z=document.getElementById('zilaSelect').value;document.getElementById('zilaName').innerText=z||"সব জেলা";if(!z){render(allMistris);return;}const f=allMistris.filter(m=>m.zila==z);if(f.length==0){render([{name:z+" জেলার জন্য কল করুন",skill:"সব ধরনের মিস্ত্রি",zila:z,phone:"01609035166",rating:5}]);}else render(f);}
-function getDist(a,b,c,d){const R=6371;const dLat=(c-a)*Math.PI/180;const dLon=(d-b)*Math.PI/180;const x=Math.sin(dLat/2)**2+Math.cos(a*Math.PI/180)*Math.cos(c*Math.PI/180)*Math.sin(dLon/2)**2;return R*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));}
-function findMistri(){const s=document.getElementById('status');s.innerText="⏳ লোকেশন নিচ্ছি...";navigator.geolocation.getCurrentPosition(p=>{const la=p.coords.latitude,lo=p.coords.longitude;let nb=allMistris.map(m=>{m.dist=getDist(la,lo,m.lat,m.lng);return m;}).filter(m=>m.dist<=10).sort((a,b)=>a.dist-b.dist);if(nb.length==0)nb=allMistris;render(nb);s.innerText="✅ "+nb.length+" জন মিস্ত্রি পাওয়া গেছে 10KM এর মধ্যে";document.getElementById('zilaName').innerText="আপনার কাছাকাছি";},()=>{s.innerText="লোকেশন Allow করুন";render(allMistris);});}
-render(allMistris);
+<!-- POPUP - কোনো ডিলিট ছাড়া এটা বসালেই হবে -->
+<div id="popup" class="fixed inset-0 bg-black/60 hidden z-[99] flex items-center justify-center p-4">
+<div class="bg-white rounded-2xl p-5 w-full max-w-sm text-center">
+<h3 id="popSkill" class="font-bold text-lg mb-3"></h3>
+<div id="popList"></div>
+<button onclick="document.getElementById('popup').classList.add('hidden')" class="mt-3 bg-gray-200 px-6 py-2 rounded-full text-sm">বন্ধ করুন</button><div id="popup" class="fixed inset-0 bg-black/60 hidden z-[999] flex items-center justify-center p-4"><div class="bg-white rounded-2xl p-5 w-full max-w-sm text-center"><h3 id="popSkill" class="font-bold text-lg mb-3"></h3><div id="popList"></div><button onclick="document.getElementById('popup').classList.add('hidden')" class="mt-3 bg-gray-200 px-6 py-2 rounded-full text-sm">বন্ধ</button></div></div><script>document.querySelectorAll('.grid div').forEach(c=>{c.style.cursor='pointer';c.onclick=()=>{let s=c.innerText;document.getElementById('popup').classList.remove('hidden');document.getElementById('popSkill').innerText=s;let f=allMistris.filter(m=>s.includes(m.skill)||m.skill.includes(s)||(s.includes('ইলেকট্রি')&&m.skill.includes('ইলেকট্রি')));if(f.length==0)f=[{name:s+" - ফরিদপুর",skill:s,zila:"ফরিদপুর",phone:"01609035166",rating:5}];let h="";f.forEach(m=>{h+=`<div class="bg-gray-50 p-3 rounded-xl mb-2 flex justify-between items-center text-left"><div><b class="text-sm">${m.name}</b><br><span class="text-xs">${m.phone} | ⭐${m.rating}</span></div><a href="tel:${m.phone}" class="bg-blue-600 text-white px-4 py-2 rounded-full text-xs font-bold">কল</a></div>`});h+=`<a href="tel:01609035166" class="block mt-3 bg-green-600 text-white py-3 rounded-xl font-bold text-sm">📞 01609035166</a>`;document.getElementById('popList').innerHTML=h;};});</script>
+</div>
+</div>
+
+<script>
+// পুরাতন ৮ টা কার্ডকে ক্লিকেবল বানানো
+document.querySelectorAll('.grid div').forEach(card=>{
+  card.style.cursor='pointer';
+  card.onclick=()=>{
+    let skill=card.innerText;
+    document.getElementById('popup').classList.remove('hidden');
+    document.getElementById('popSkill').innerText=skill;
+    let filtered=allMistris.filter(m=>skill.includes(m.skill) || m.skill.includes(skill) || skill.includes('ইলেকট্রি')&&m.skill.includes('ইলেকট্রি'));
+    if(filtered.length==0) filtered=[{name:skill+" - আপনার এলাকায়",skill:skill,zila:"ফরিদপুর",phone:"01609035166",rating:5}];
+    let html="";
+    filtered.forEach(m=>{
+      html+=`<div class="bg-gray-50 p-3 rounded-xl mb-2 flex justify-between items-center text-left"><div><b class="text-sm">${m.name}</b><br><span class="text-xs text-gray-600">${m.phone} | ⭐${m.rating}</span></div><a href="tel:${m.phone}" class="bg-blue-600 text-white px-4 py-2 rounded-full text-xs font-bold">কল</a></div>`;
+    });
+    html+=`<a href="tel:01609035166" class="block mt-3 bg-green-600 text-white py-3 rounded-xl font-bold text-sm">📞 হটলাইন: 01609035166</a>`;
+    document.getElementById('popList').innerHTML=html;
+  };
+});
 </script>
+
+
+
+
+  </script>
 </body>
 </html>
