@@ -1,59 +1,90 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sobmistri - 64 Zila</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:system-ui;background:#f1f5f9;display:flex;justify-content:center;padding:15px}
-.card{background:#fff;max-width:480px;width:100%;padding:22px;border-radius:18px;box-shadow:0 10px 25px #0002}
-.logo{font-size:26px;font-weight:900;text-align:center;color:#1e293b}.logo span{color:#f59e0b}
-h2{text-align:center;margin:8px 0;color:#334155}
-.status{padding:12px;border-radius:10px;text-align:center;font-weight:700;margin:12px 0;background:#dbeafe;color:#1d4ed8}
-select{width:100%;padding:12px;border-radius:10px;border:1px solid #cbd5e1;font-size:16px}
-.num{font-size:32px;font-weight:900;color:#2563eb;text-align:center;margin:12px 0}
-.btn{display:block;background:#2563eb;color:#fff;padding:14px;border-radius:12px;text-align:center;text-decoration:none;font-weight:800;font-size:18px}
-.small{font-size:13px;color:#64748b;text-align:center;margin-top:10px}
-</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobmistri - 64 Zila | 01609035166</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+<style>body{font-family:'Hind Siliguri',sans-serif}</style>
 </head>
-<body>
-<div class="card">
-<div class="logo">Sob<span>mistri</span></div>
-<h2>৬৪ জেলা অটো কানেক্ট</h2>
-<div id="status" class="status">📍 আপনার লোকেশন বের করা হচ্ছে...</div>
-<select id="zila"><option>জেলা লোড হচ্ছে...</option></select>
-<div class="num" id="num">01609035166</div>
-<div id="name" style="text-align:center;font-weight:700">হেড অফিস</div>
-<a id="call" href="tel:01609035166" class="btn">📞 কল করুন</a>
-<div class="small">কাছে মিস্ত্রি থাকলে অটো কানেক্ট হবে, না থাকলে হেড অফিসে যাবে</div>
+<body class="bg-gray-50">
+
+<header class="bg-white shadow sticky top-0 z-50">
+<div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+<h1 class="text-xl font-bold"><span class="text-blue-600">Sob</span><span class="text-orange-500">mistri</span> <span class="text-[10px] bg-green-600 text-white px-2 py-1 rounded-full">64 ZILA LIVE</span></h1>
+<div class="flex gap-2">
+<a href="tel:01609035166" class="bg-blue-600 text-white px-4 py-2 rounded-full text-xs font-bold">📞 01609035166</a>
 </div>
+</div>
+</header>
+
+<section class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white py-8 px-4 text-center">
+<h2 class="text-3xl font-bold">৬৪ জেলায় সব মিস্ত্রি</h2>
+<p class="mt-2 text-blue-100">আপনার জেলা সিলেক্ট করুন, ১০ কিমি এর মধ্যে মিস্ত্রি পান</p>
+<div class="mt-4 max-w-xl mx-auto flex gap-2">
+<select id="zilaSelect" onchange="filterZila()" class="w-full text-gray-800 p-3 rounded-xl font-bold">
+<option value="">-- ৬৪ জেলা বেছে নিন --</option>
+<option>ঢাকা</option><option>গাজীপুর</option><option>নারায়ণগঞ্জ</option><option>টাঙ্গাইল</option><option>নরসিংদী</option><option>মুন্সিগঞ্জ</option><option>মানিকগঞ্জ</option><option>কিশোরগঞ্জ</option><option>ফরিদপুর</option><option>মাদারীপুর</option><option>শরীয়তপুর</option><option>গোপালগঞ্জ</option><option>রাজবাড়ী</option>
+<option>চট্টগ্রাম</option><option>কক্সবাজার</option><option>কুমিল্লা</option><option>ব্রাহ্মণবাড়িয়া</option><option>চাঁদপুর</option><option>নোয়াখালী</option><option>লক্ষ্মীপুর</option><option>ফেনী</option><option>খাগড়াছড়ি</option><option>রাঙ্গামাটি</option><option>বান্দরবান</option>
+<option>সিলেট</option><option>মৌলভীবাজার</option><option>হবিগঞ্জ</option><option>সুনামগঞ্জ</option>
+<option>রাজশাহী</option><option>বগুড়া</option><option>পাবনা</option><option>নাটোর</option><option>নওগাঁ</option><option>চাঁপাইনবাবগঞ্জ</option><option>জয়পুরহাট</option><option>সিরাজগঞ্জ</option>
+<option>খুলনা</option><option>যশোর</option><option>সাতক্ষীরা</option><option>বাগেরহাট</option><option>কুষ্টিয়া</option><option>ঝিনাইদহ</option><option>চুয়াডাঙ্গা</option><option>মাগুরা</option><option>মেহেরপুর</option><option>নড়াইল</option>
+<option>বরিশাল</option><option>পটুয়াখালী</option><option>ভোলা</option><option>বরগুনা</option><option>ঝালকাঠি</option><option>পিরোজপুর</option>
+<option>রংপুর</option><option>দিনাজপুর</option><option>কুড়িগ্রাম</option><option>গাইবান্ধা</option><option>নীলফামারী</option><option>লালমনিরহাট</option><option>পঞ্চগড়</option><option>ঠাকুরগাঁও</option>
+<option>ময়মনসিংহ</option><option>জামালপুর</option><option>নেত্রকোনা</option><option>শেরপুর</option>
+</select>
+<button onclick="findMistri()" class="bg-green-500 px-4 rounded-xl font-bold text-sm whitespace-nowrap">📍 10KM</button>
+</div>
+<div class="mt-4 flex justify-center gap-2">
+<a href="tel:01609035166" class="bg-white text-blue-700 px-6 py-2 rounded-full font-bold text-sm">📞 এখনই কল করুন</a>
+<a href="https://wa.me/8801609035166" class="bg-green-500 text-white px-6 py-2 rounded-full font-bold text-sm">WhatsApp</a>
+</div>
+<p id="status" class="text-xs mt-3 text-blue-200">হটলাইন: 01609035166 - ৬৪ জেলায় সার্ভিস</p>
+</section>
+
+<div class="max-w-6xl mx-auto px-4 py-6">
+<div class="flex justify-between mb-3">
+<h3 class="font-bold"><span id="zilaName">সব জেলা</span> - <span id="count">9</span> জন মিস্ত্রি</h3>
+<span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">● LIVE 01609035166</span>
+</div>
+<div id="mistriList" class="grid md:grid-cols-2 gap-3"></div>
+</div>
+
+<section class="max-w-6xl mx-auto px-4 pb-8">
+<h3 class="font-bold mb-3">🔧 16+ মিস্ত্রি সার্ভিস</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-[13px]">
+<div class="bg-white p-3 rounded-xl shadow text-center">💡 ইলেকট্রিশিয়ান</div>
+<div class="bg-white p-3 rounded-xl shadow text-center">🚿 প্লাম্বার</div>
+<div class="bg-white p-3 rounded-xl shadow text-center">❄️ এসি / ফ্রিজ</div>
+<div class="bg-white p-3 rounded-xl shadow text-center">🎨 রঙ মিস্ত্রি</div>
+<div class="bg-white p-3 rounded-xl shadow text-center">🪚 কাঠ মিস্ত্রি</div>
+<div class="bg-white p-3 rounded-xl shadow text-center">🧱 রাজ মিস্ত্রি</div>
+<div class="bg-white p-3 rounded-xl shadow text-center">🔩 টাইলস</div>
+<div class="bg-white p-3 rounded-xl shadow text-center">⚒️ ওয়েল্ডিং</div>
+<div class="bg-white p-3 rounded-xl shadow text-center">📺 টিভি</div>
+<div class="bg-white p-3 rounded-xl shadow text-center">📹 CCTV/WiFi</div>
+<div class="bg-white p-3 rounded-xl shadow text-center">🏠 থাই-গ্লাস</div>
+<div class="bg-white p-3 rounded-xl shadow text-center">🔑 তালা-চাবি</div>
+</div>
+</section>
+
+<footer class="bg-gray-900 text-white py-6 text-center">
+<h2 class="font-bold text-lg">Sobmistri</h2>
+<p class="text-sm text-gray-300 mt-1">হটলাইন: <a href="tel:01609035166" class="text-green-400 font-bold">01609035166</a></p>
+<p class="text-xs text-gray-500 mt-1">© 2026 - 64 জেলায় সার্ভিস</p>
+</footer>
+
 <script>
-const zilas=["Barguna","Barishal","Bhola","Jhalokati","Patuakhali","Pirojpur","Bandarban","Brahmanbaria","Chandpur","Chattogram","Cumilla","Cox's Bazar","Feni","Khagrachhari","Lakshmipur","Noakhali","Rangamati","Dhaka","Faridpur","Gazipur","Gopalganj","Kishoreganj","Madaripur","Manikganj","Munshiganj","Narayanganj","Narsingdi","Rajbari","Shariatpur","Tangail","Bagerhat","Chuadanga","Jashore","Jhenaidah","Khulna","Kushtia","Magura","Meherpur","Narail","Satkhira","Jamalpur","Mymensingh","Netrokona","Sherpur","Bogra","Joypurhat","Naogaon","Natore","Chapainawabganj","Pabna","Rajshahi","Sirajganj","Habiganj","Moulvibazar","Sunamganj","Sylhet","Dinajpur","Gaibandha","Kurigram","Lalmonirhat","Nilphamari","Panchagarh","Rangpur","Thakurgaon"];
-const mistriDB={
-"Narayanganj":{n:"Narayanganj Mistri",p:"01700000001"},
-"Dhaka":{n:"Dhaka Mistri",p:"01700000002"},
-"Narail":{n:"Narail Mistri",p:"01700000003"},
-"Gazipur":{n:"Gazipur Mistri",p:"01700000004"}
-};
-const head={n:"হেড অফিস",p:"01609035166"};
-const sel=document.getElementById('zila'),st=document.getElementById('status'),nm=document.getElementById('num'),nm2=document.getElementById('name'),btn=document.getElementById('call');
-sel.innerHTML='<option value="">জেলা সিলেক্ট করুন</option>'; zilas.forEach(z=>{let o=document.createElement('option');o.value=z;o.textContent=z;sel.appendChild(o);});
-function connect(z){
-let m=mistriDB[z];
-if(m){nm.textContent=m.p;nm2.textContent=m.n+" - "+z;btn.href="tel:"+m.p;btn.textContent="📞 "+z+" মিস্ত্রিকে কল";st.textContent="✅ "+z+" এর মিস্ত্রি পাওয়া গেছে";st.style.background="#dcfce7";st.style.color="#166534";}
-else{nm.textContent=head.p;nm2.textContent=head.n+" - "+z+" এ মিস্ত্রি নেই";btn.href="tel:"+head.p;btn.textContent="📞 হেড অফিসে কল 01609035166";st.textContent="⚠️ "+z+" এ মিস্ত্রি নেই, হেড অফিসে যাবে";st.style.background="#ffedd5";st.style.color="#9a3412";}
-}
-sel.addEventListener('change',()=>{if(sel.value)connect(sel.value);});
-if(navigator.geolocation){
-navigator.geolocation.getCurrentPosition(async p=>{
-try{
-let r=await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${p.coords.latitude}&longitude=${p.coords.longitude}&localityLanguage=en`);
-let d=await r.json(); let city=d.city||d.locality||d.principalSubdivision||"";
-let f=zilas.find(z=>city.toLowerCase().includes(z.toLowerCase())||z.toLowerCase().includes(city.toLowerCase()));
-if(f){sel.value=f;connect(f);} else{st.textContent="📍 লোকেশন: "+city+" - নিচে জেলা সিলেক্ট করুন"; sel.value="Narayanganj"; connect("Narayanganj");}
-}catch{st.textContent="নেট সমস্যা, নিচে জেলা সিলেক্ট করুন";}
-},()=>{st.textContent="📍 লোকেশন Allow করেন নাই, নিচে জেলা সিলেক্ট করুন";});
-}
-</script>
-</body>
-</html>
+const allMistris=[
+{name:"রহিম - ঢাকা",skill:"ইলেকট্রিশিয়ান",zila:"ঢাকা",lat:23.8103,lng:90.4125,phone:"01609035166",rating:4.9},
+{name:"করিম - গাজীপুর",skill:"প্লাম্বার",zila:"গাজীপুর",lat:23.99,lng:90.42,phone:"01609035166",rating:4.8},
+{name:"সুমন - চট্টগ্রাম",skill:"এসি / ফ্রিজ",zila:"চট্টগ্রাম",lat:22.34,lng:91.81,phone:"01609035166",rating:5.0},
+{name:"জামাল - সিলেট",skill:"রঙ মিস্ত্রি",zila:"সিলেট",lat:24.89,lng:91.87,phone:"01609035166",rating:4.7},
+{name:"আলম - রাজশাহী",skill:"টাইলস",zila:"রাজশাহী",lat:24.37,lng:88.60,phone:"01609035166",rating:4.8},
+{name:"বাবুল - খুলনা",skill:"কাঠ মিস্ত্রি",zila:"খুলনা",lat:22.81,lng:89.56,phone:"01609035166",rating:4.9},
+{name:"সোহেল - বরিশাল",skill:"ওয়েল্ডিং",zila:"বরিশাল",lat:22.70,lng:90.37,phone:"01609035166",rating:4.6},
+{name:"নাসির - রংপুর",skill:"রাজ মিস্ত্রি",zila:"রংপুর",lat:25.75,lng:89.25,phone:"01609035166",rating:4.8},
+{name:"হাসান - ময়মনসিংহ",skill:"স্যানিটারি",zila:"ময়মনসিংহ",lat:24.75,lng:90.40,phone:"01609035166",rating:4.9},
+];
+function render(list){const el=document.getElementById('mistriList');el.innerHTML="";list.forEach(m=>{el.innerHTML+=`<div class="bg-white p-4 rounded-xl shadow flex justify-between items-center"><div><b class="text-sm">${m.name}</b><br><span class="text-xs text-gray-600">${m.skill} | ${m.z
