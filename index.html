@@ -1,53 +1,38 @@
-<!DOCTYPE html><html lang="bn"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SobSob - 64 Zila Super App</title><script src="https://cdn.tailwindcss.com"></script></head>
+<!DOCTYPE html><html lang="bn"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SobSob</title><script src="https://cdn.tailwindcss.com"></script></head>
 <body class="bg-gray-100">
-<div class="max-w-md mx-auto bg-white min-h-screen shadow-2xl">
+<div class="max-w-md mx-auto bg-white min-h-screen">
 
-<div class="bg-purple-700 text-white p-4 text-center sticky top-0 z-50">
-<b class="text-xl">SobSob - সব কিছু একসাথে</b>
-<div class="text-xs mt-1">🚀 Rocket: 01908202027 | ৬৪ জেলায় সার্ভিস</div>
-<select id="zila" class="w-full mt-2 p-2 rounded text-black font-bold"><option>📍 পাবনা</option><option>ঢাকা</option><option>নড়াইল</option><option>নারায়ণগঞ্জ</option><option>খুলনা</option><option>চট্টগ্রাম</option><option>রাজশাহী</option><option>৬৪ জেলা - সব</option></select>
+<div class="bg-purple-700 text-white p-4 text-center">
+<b>SobSob - 7 in 1</b><br><small>Rocket: 01908202027</small>
+<select id="zila" class="w-full mt-2 p-2 rounded text-black"><option>পাবনা</option><option>ঢাকা</option><option>নড়াইল</option><option>নারায়ণগঞ্জ</option><option>৬৪ জেলা</option></select>
 </div>
 
-<div class="grid grid-cols-4 gap-2 p-3 bg-white">
-<button onclick="tab('sell')" class="bg-purple-100 p-2 rounded-xl text-xs font-bold">🛒<br>বেচা-কেনা</button>
-<button onclick="tab('mistri')" class="bg-blue-100 p-2 rounded-xl text-xs font-bold">🔧<br>মিস্ত্রী</button>
-<button onclick="tab('bari')" class="bg-green-100 p-2 rounded-xl text-xs font-bold">🏠<br>বাড়ি ভাড়া</button>
-<button onclick="tab('job')" class="bg-yellow-100 p-2 rounded-xl text-xs font-bold">💼<br>চাকরি</button>
-<button onclick="tab('food')" class="bg-red-100 p-2 rounded-xl text-xs font-bold">🍔<br>খাবার</button>
-<button onclick="tab('course')" class="bg-pink-100 p-2 rounded-xl text-xs font-bold">🎓<br>কোর্স</button>
-<button onclick="tab('daraz')" class="bg-orange-100 p-2 rounded-xl text-xs font-bold">📦<br>Daraz Mall</button>
-<button onclick="tab('add')" class="bg-black text-white p-2 rounded-xl text-xs font-bold">＋<br>পোস্ট দিন</button>
+<div class="grid grid-cols-4 gap-2 p-2">
+<button onclick="openTab('sell')" class="bg-purple-200 p-2 rounded text-xs font-bold">🛒 বেচা</button>
+<button onclick="openTab('mistri')" class="bg-blue-200 p-2 rounded text-xs font-bold">🔧 মিস্ত্রী</button>
+<button onclick="openTab('bari')" class="bg-green-200 p-2 rounded text-xs font-bold">🏠 বাড়ি</button>
+<button onclick="openTab('job')" class="bg-yellow-200 p-2 rounded text-xs font-bold">💼 চাকরি</button>
+<button onclick="openTab('food')" class="bg-red-200 p-2 rounded text-xs font-bold">🍔 খাবার</button>
+<button onclick="openTab('course')" class="bg-pink-200 p-2 rounded text-xs font-bold">🎓 কোর্স</button>
+<button onclick="openTab('daraz')" class="bg-orange-200 p-2 rounded text-xs font-bold">📦 Mall</button>
+<button onclick="openTab('add')" class="bg-black text-white p-2 rounded text-xs font-bold">＋ পোস্ট</button>
 </div>
 
-<div id="sell" class="p-3 space-y-2">
-<div class="bg-white border rounded-xl p-3 flex gap-3"><img src="https://via.placeholder.com/70" class="w-16 h-16 rounded"><div><b>iPhone 12 - ৳45k</b><div class="text-xs">পাবনা | কমিশন ৳900</div><button onclick="pay('iPhone')" class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full mt-1">Rocket এ কিনুন</button></div></div>
-<div class="bg-white border rounded-xl p-3 flex gap-3"><img src="https://via.placeholder.com/70" class="w-16 h-16 rounded"><div><b>Pulsar 150 - ৳120k</b><div class="text-xs">নড়াইল | কমিশন ৳2400</div><button onclick="pay('Bike')" class="bg-purple-600 text-white text-xs px-3 py-1 rounded-full mt-1">Rocket এ কিনুন</button></div></div>
-</div>
-
-<div id="mistri" class="p-3 space-y-2 hidden">
-<div class="border rounded-xl p-3"><b>🔧 ইলেকট্রিশিয়ান - পাবনা</b><div class="text-xs">কল করলেই ৩০ মিনিটে | আপনি পাবেন ৳200</div><a href="tel:01908202027" class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full mt-1 inline-block">কল দিন</a></div>
-<div class="border rounded-xl p-3"><b>🚿 প্লাম্বার - নারায়ণগঞ্জ</b><div class="text-xs">আপনি পাবেন ৳200 কমিশন</div><a href="tel:01908202027" class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full mt-1 inline-block">কল দিন</a></div>
-</div>
-
-<div id="bari" class="p-3 space-y-2 hidden">
-<div class="border rounded-xl p-3"><b>🏠 ২ রুম ফ্ল্যাট - নড়াইল</b><div class="text-xs">ভাড়া ৳8000 | আপনার কমিশন ৳4000</div><button onclick="pay('Bari')" class="bg-green-600 text-white text-xs px-3 py-1 rounded-full mt-1">Rocket এ বুক</button></div>
-</div>
-
-<div id="job" class="p-3 space-y-2 hidden">
-<div class="border rounded-xl p-3"><b>💼 শোরুমে চাকরি - ঢাকা</b><div class="text-xs">বেতন ৳15000 | কোম্পানি দিবে আপনাকে ৳500</div><button onclick="pay('Job')" class="bg-yellow-600 text-white text-xs px-3 py-1 rounded-full mt-1">আবেদন - Rocket 50৳</button></div>
-</div>
-
-<div id="food" class="p-3 hidden"><div class="border rounded-xl p-3"><b>🍔 বিরিয়ানি - পাবনা</b><div class="text-xs">দাম ৳250 | আপনার লাভ ৳50</div><button onclick="pay('Food')" class="bg-red-600 text-white text-xs px-3 py-1 rounded-full mt-1">অর্ডার</button></div></div>
-<div id="course" class="p-3 hidden"><div class="border rounded-xl p-3"><b>🎓 ফ্রিল্যান্সিং কোর্স</b><div class="text-xs">দাম ৳500 | 100 জন কিনলেই ৳50,000</div><button onclick="pay('Course')" class="bg-pink-600 text-white text-xs px-3 py-1 rounded-full mt-1">Rocket এ কিনুন</button></div></div>
-<div id="daraz" class="p-3 hidden"><div class="border rounded-xl p-3"><b>📦 Daraz Affiliate</b><div class="text-xs">লিংক শেয়ার করেন, 10% কমিশন Rocket এ</div><button onclick="pay('Daraz')" class="bg-orange-600 text-white text-xs px-3 py-1 rounded-full mt-1">লিংক নিন</button></div></div>
-
-<div id="add" class="p-3 hidden">
-<input id="pname" placeholder="প্রোডাক্টের নাম" class="w-full border p-3 rounded-xl"><input id="pprice" placeholder="দাম" class="w-full border p-3 rounded-xl mt-2"><input type="file" id="pic" class="w-full mt-2"><button onclick="addProd()" class="w-full bg-black text-white p-3 rounded-xl mt-2 font-bold">＋ পোস্ট দিন - ৳50 Rocket ফি</button>
-<div class="text-xs mt-2 text-center">পোস্ট দিলে Rocket 01908202027 তে ৳50 আসবে, তারপর লাইভ হবে</div>
-</div>
-
-<a href="tel:01908202027" class="fixed bottom-3 left-1/2 -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-full font-bold shadow-2xl">📞 Rocket: 01908202027</a>
+<div id="sell" class="tab p-3"><div class="border p-3 rounded">iPhone - 45k <button onclick="pay()" class="bg-purple-600 text-white px-2 rounded text-xs">Buy</button></div></div>
+<div id="mistri" class="tab p-3 hidden"><div class="border p-3 rounded">ইলেকট্রিশিয়ান - 200৳ কমিশন <a href="tel:01908202027" class="bg-blue-600 text-white px-2 rounded text-xs">Call</a></div></div>
+<div id="bari" class="tab p-3 hidden"><div class="border p-3 rounded">ফ্ল্যাট ভাড়া - 4000৳ কমিশন</div></div>
+<div id="job" class="tab p-3 hidden"><div class="border p-3 rounded">চাকরি - 500৳</div></div>
+<div id="food" class="tab p-3 hidden"><div class="border p-3 rounded">বিরিয়ানি - 50৳ লাভ</div></div>
+<div id="course" class="tab p-3 hidden"><div class="border p-3 rounded">কোর্স - 500৳</div></div>
+<div id="daraz" class="tab p-3 hidden"><div class="border p-3 rounded">Daraz - 10% কমিশন</div></div>
+<div id="add" class="tab p-3 hidden"><input placeholder="নাম" class="border w-full p-2 rounded"><button class="bg-black text-white w-full p-2 rounded mt-2">পোস্ট দিন</button></div>
 
 </div>
 <script>
-function tab(id){document.querySelectorAll('[id]').forEach(e=>{if(['sell','mistri','bari','job','food','course','daraz','add'].includes(e.id))e.classList.add('hidden')});document.getElementById(id).
+function openTab(name){
+ document.querySelectorAll('.tab').forEach(t=>t.classList.add('hidden'));
+ document.getElementById(name).classList.remove('hidden');
+}
+function pay(){alert('Rocket 01908202027 এ টাকা পাঠান'); location.href='tel:01908202027'}
+</script>
+</body></html>
