@@ -1,60 +1,59 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sobmistri - সব মিস্ত্রি</title>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobmistri - 64 Zila</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Hind Siliguri',sans-serif}
-body{background:#f8fafc;color:#1e293b}
-header{background:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.06)}
-.logo{font-size:26px;font-weight:900;color:#1e40af}
-.logo span{color:#ea580c}
-.hero{background:linear-gradient(135deg,#dbeafe 0%, #ffffff 60%);padding:40px 20px;text-align:center}
-.hero h1{font-size:28px;line-height:1.3;font-weight:800}
-.hero h1 span{color:#1e40af}
-.hero p{margin:12px 0 20px;color:#64748b}
-.btn-main{background:#ea580c;color:#fff;padding:14px 32px;border-radius:50px;text-decoration:none;font-weight:700;display:inline-block}
-.services{padding:20px}
-.section-title{font-size:22px;font-weight:800;margin:20px 20px 10px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 20px}
-.card{background:#fff;border-radius:16px;padding:16px;box-shadow:0 4px 15px rgba(0,0,0,.05);border:1px solid #f1f5f9}
-.card .icon{font-size:32px;margin-bottom:8px}
-.card h3{font-size:16px;font-weight:700}
-.card p{font-size:12px;color:#64748b;margin:4px 0 10px}
-.card .price{font-size:13px;font-weight:700;color:#ea580c}
-.card a{font-size:13px;color:#1e40af;font-weight:700;text-decoration:none}
-.how{background:#fff;margin:20px;border-radius:16px;padding:20px}
-.how h2{text-align:center;font-weight:800;margin-bottom:15px}
-.step{display:flex;gap:12px;margin-bottom:12px}
-.step-num{background:#dbeafe;color:#1e40af;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
-footer{background:#0f172a;color:#cbd5e1;text-align:center;padding:25px 20px;margin-top:20px}
-footer b{color:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui;background:#f1f5f9;display:flex;justify-content:center;padding:15px}
+.card{background:#fff;max-width:480px;width:100%;padding:22px;border-radius:18px;box-shadow:0 10px 25px #0002}
+.logo{font-size:26px;font-weight:900;text-align:center;color:#1e293b}.logo span{color:#f59e0b}
+h2{text-align:center;margin:8px 0;color:#334155}
+.status{padding:12px;border-radius:10px;text-align:center;font-weight:700;margin:12px 0;background:#dbeafe;color:#1d4ed8}
+select{width:100%;padding:12px;border-radius:10px;border:1px solid #cbd5e1;font-size:16px}
+.num{font-size:32px;font-weight:900;color:#2563eb;text-align:center;margin:12px 0}
+.btn{display:block;background:#2563eb;color:#fff;padding:14px;border-radius:12px;text-align:center;text-decoration:none;font-weight:800;font-size:18px}
+.small{font-size:13px;color:#64748b;text-align:center;margin-top:10px}
 </style>
 </head>
 <body>
-<header><div class="logo">Sob<span>mistri</span> 🔧</div><div>☰</div></header>
-<div class="hero">
-<h1>বিশ্বস্ত <span>মিস্ত্রি সেবা</span>,<br>এখন হাতের মুঠোয়</h1>
-<p>আত্রাই, নওগাঁ - রাজমিস্ত্রি, রংমিস্ত্রি, ইলেকট্রিশিয়ান, প্লাম্বার ও কাঠমিস্ত্রি</p>
-<a class="btn-main" href="#">📅 এখনই বুক করুন</a>
+<div class="card">
+<div class="logo">Sob<span>mistri</span></div>
+<h2>৬৪ জেলা অটো কানেক্ট</h2>
+<div id="status" class="status">📍 আপনার লোকেশন বের করা হচ্ছে...</div>
+<select id="zila"><option>জেলা লোড হচ্ছে...</option></select>
+<div class="num" id="num">01609035166</div>
+<div id="name" style="text-align:center;font-weight:700">হেড অফিস</div>
+<a id="call" href="tel:01609035166" class="btn">📞 কল করুন</a>
+<div class="small">কাছে মিস্ত্রি থাকলে অটো কানেক্ট হবে, না থাকলে হেড অফিসে যাবে</div>
 </div>
-<h2 class="section-title">আমাদের সেবা সমূহ</h2>
-<div class="grid">
-<div class="card"><div class="icon">🧱</div><h3>রাজমিস্ত্রি</h3><p>দেয়াল, প্লাস্টার, টাইলস</p><div class="price">৳৫০০ থেকে</div><a href="#">বুক করুন →</a></div>
-<div class="card"><div class="icon">🎨</div><h3>রংমিস্ত্রি</h3><p>ভিতর ও বাইরের রং</p><div class="price">৳৮০০ থেকে</div><a href="#">বুক করুন →</a></div>
-<div class="card"><div class="icon">⚡</div><h3>ইলেকট্রিশিয়ান</h3><p>ওয়্যারিং, লাইট, ফ্যান</p><div class="price">৳৩০০ থেকে</div><a href="#">বুক করুন →</a></div>
-<div class="card"><div class="icon">🚿</div><h3>প্লাম্বার</h3><p>পাইপ, ট্যাপ, মোটর</p><div class="price">৳৩০০ থেকে</div><a href="#">বুক করুন →</a></div>
-<div class="card"><div class="icon">🪚</div><h3>কাঠমিস্ত্রি</h3><p>দরজা, ফার্নিচার</p><div class="price">৳৬০০ থেকে</div><a href="#">বুক করুন →</a></div>
-<div class="card"><div class="icon">🔧</div><h3>টাইলস মিস্ত্রি</h3><p>ফ্লোর ও ওয়াল টাইলস</p><div class="price">৳৭০০ থেকে</div><a href="#">বুক করুন →</a></div>
-</div>
-<div class="how">
-<h2>কিভাবে কাজ করে?</h2>
-<div class="step"><div class="step-num">1</div><div><b>সার্ভিস নির্বাচন করুন</b><br><small style="color:#64748b">আপনার প্রয়োজনীয় মিস্ত্রি বেছে নিন</small></div></div>
-<div class="step"><div class="step-num">2</div><div><b>বুকিং করুন</b><br><small style="color:#64748b">তারিখ ও সময় ঠিক করুন</small></div></div>
-<div class="step"><div class="step-num">3</div><div><b>মিস্ত্রি পৌঁছে যাবে</b><br><small style="color:#64748b">দক্ষ মিস্ত্রি আপনার বাড়িতে</small></div></div>
-</div>
-<footer><b>Sobmistri 🔧</b><br>আত্রাই, নওগাঁ, রাজশাহী<br>📞 ০১৭XX-XXXXXX<br><br>© ২০২৬ Sobmistri - সব মিস্ত্রি</footer>
+<script>
+const zilas=["Barguna","Barishal","Bhola","Jhalokati","Patuakhali","Pirojpur","Bandarban","Brahmanbaria","Chandpur","Chattogram","Cumilla","Cox's Bazar","Feni","Khagrachhari","Lakshmipur","Noakhali","Rangamati","Dhaka","Faridpur","Gazipur","Gopalganj","Kishoreganj","Madaripur","Manikganj","Munshiganj","Narayanganj","Narsingdi","Rajbari","Shariatpur","Tangail","Bagerhat","Chuadanga","Jashore","Jhenaidah","Khulna","Kushtia","Magura","Meherpur","Narail","Satkhira","Jamalpur","Mymensingh","Netrokona","Sherpur","Bogra","Joypurhat","Naogaon","Natore","Chapainawabganj","Pabna","Rajshahi","Sirajganj","Habiganj","Moulvibazar","Sunamganj","Sylhet","Dinajpur","Gaibandha","Kurigram","Lalmonirhat","Nilphamari","Panchagarh","Rangpur","Thakurgaon"];
+const mistriDB={
+"Narayanganj":{n:"Narayanganj Mistri",p:"01700000001"},
+"Dhaka":{n:"Dhaka Mistri",p:"01700000002"},
+"Narail":{n:"Narail Mistri",p:"01700000003"},
+"Gazipur":{n:"Gazipur Mistri",p:"01700000004"}
+};
+const head={n:"হেড অফিস",p:"01609035166"};
+const sel=document.getElementById('zila'),st=document.getElementById('status'),nm=document.getElementById('num'),nm2=document.getElementById('name'),btn=document.getElementById('call');
+sel.innerHTML='<option value="">জেলা সিলেক্ট করুন</option>'; zilas.forEach(z=>{let o=document.createElement('option');o.value=z;o.textContent=z;sel.appendChild(o);});
+function connect(z){
+let m=mistriDB[z];
+if(m){nm.textContent=m.p;nm2.textContent=m.n+" - "+z;btn.href="tel:"+m.p;btn.textContent="📞 "+z+" মিস্ত্রিকে কল";st.textContent="✅ "+z+" এর মিস্ত্রি পাওয়া গেছে";st.style.background="#dcfce7";st.style.color="#166534";}
+else{nm.textContent=head.p;nm2.textContent=head.n+" - "+z+" এ মিস্ত্রি নেই";btn.href="tel:"+head.p;btn.textContent="📞 হেড অফিসে কল 01609035166";st.textContent="⚠️ "+z+" এ মিস্ত্রি নেই, হেড অফিসে যাবে";st.style.background="#ffedd5";st.style.color="#9a3412";}
+}
+sel.addEventListener('change',()=>{if(sel.value)connect(sel.value);});
+if(navigator.geolocation){
+navigator.geolocation.getCurrentPosition(async p=>{
+try{
+let r=await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${p.coords.latitude}&longitude=${p.coords.longitude}&localityLanguage=en`);
+let d=await r.json(); let city=d.city||d.locality||d.principalSubdivision||"";
+let f=zilas.find(z=>city.toLowerCase().includes(z.toLowerCase())||z.toLowerCase().includes(city.toLowerCase()));
+if(f){sel.value=f;connect(f);} else{st.textContent="📍 লোকেশন: "+city+" - নিচে জেলা সিলেক্ট করুন"; sel.value="Narayanganj"; connect("Narayanganj");}
+}catch{st.textContent="নেট সমস্যা, নিচে জেলা সিলেক্ট করুন";}
+},()=>{st.textContent="📍 লোকেশন Allow করেন নাই, নিচে জেলা সিলেক্ট করুন";});
+}
+</script>
 </body>
 </html>
