@@ -1,60 +1,36 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>Sobmistri - 01609035166</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-*{-webkit-user-select:none!important; user-select:none!important; -webkit-touch-callout:none!important;}
-button{user-select:none!important; touch-action:manipulation;}
-</style>
-</head>
-<body class="bg-gray-50">
-<header class="bg-white p-3 flex justify-between items-center shadow sticky top-0">
-<h1 class="font-bold text-xl"><span style="color:blue">Sob</span><span style="color:orange">mistri</span></h1>
-<a href="tel:01609035166" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-bold">📞 01609035166</a>
-</header>
+<!DOCTYPE html><html lang="bn"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SobSell 64 Zila Rocket</title><script src="https://cdn.tailwindcss.com"></script></head>
+<body class="bg-gray-100">
+<div class="p-4 max-w-md mx-auto">
+<select id="zila" onchange="filter()" class="w-full p-4 rounded-xl border-2 border-purple-600 bg-white font-bold">
+<option value="">👇 ৬৪ জেলা সিলেক্ট করুন</option>
+<option>ঢাকা</option><option>ফরিদপুর</option><option>গাজীপুর</option><option>গোপালগঞ্জ</option><option>কিশোরগঞ্জ</option><option>মাদারীপুর</option><option>মানিকগঞ্জ</option><option>মুন্সিগঞ্জ</option><option>নারায়ণগঞ্জ</option><option>নরসিংদী</option><option>রাজবাড়ী</option><option>শরীয়তপুর</option><option>টাঙ্গাইল</option>
+<option>চট্টগ্রাম</option><option>কক্সবাজার</option><option>বান্দরবান</option><option>ব্রাহ্মণবাড়িয়া</option><option>চাঁদপুর</option><option>কুমিল্লা</option><option>খাগড়াছড়ি</option><option>ফেনী</option><option>লক্ষ্মীপুর</option><option>নোয়াখালী</option><option>রাঙামাটি</option>
+<option>রাজশাহী</option><option>বগুড়া</option><option>চাঁপাইনবাবগঞ্জ</option><option>জয়পুরহাট</option><option>নওগাঁ</option><option>নাটোর</option><option>পাবনা</option><option>সিরাজগঞ্জ</option>
+<option>খুলনা</option><option>বাগেরহাট</option><option>চুয়াডাঙ্গা</option><option>যশোর</option><option>ঝিনাইদহ</option><option>কুষ্টিয়া</option><option>মাগুরা</option><option>মেহেরপুর</option><option>নড়াইল</option><option>সাতক্ষীরা</option>
+<option>বরিশাল</option><option>বরগুনা</option><option>ভোলা</option><option>ঝালকাঠি</option><option>পটুয়াখালী</option><option>পিরোজপুর</option>
+<option>সিলেট</option><option>হবিগঞ্জ</option><option>মৌলভীবাজার</option><option>সুনামগঞ্জ</option>
+<option>রংপুর</option><option>দিনাজপুর</option><option>গাইবান্ধা</option><option>কুড়িগ্রাম</option><option>লালমনিরহাট</option><option>নীলফামারী</option><option>পঞ্চগড়</option><option>ঠাকুরগাঁও</option>
+<option>ময়মনসিংহ</option><option>জামালপুর</option><option>নেত্রকোনা</option><option>শেরপুর</option>
+</select>
 
-<div class="p-4">
-<div class="flex justify-between items-center mt-2"><h2 class="font-bold">সব জেলা - 9 জন মিস্ত্রি</h2><span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs">● LIVE 01609035166</span></div>
-
-<h3 class="font-bold mt-6 mb-3">🔧 16+ মিস্ত্রি সার্ভিস</h3>
-<div class="grid grid-cols-2 gap-3">
-<button onclick="showM('ইলেকট্রিশিয়ান')" class="bg-white p-4 rounded-2xl shadow font-medium">💡 ইলেকট্রিশিয়ান</button>
-<button onclick="showM('প্লাম্বার')" class="bg-white p-4 rounded-2xl shadow font-medium">🚿 প্লাম্বার</button>
-<button onclick="showM('এসি / ফ্রিজ')" class="bg-white p-4 rounded-2xl shadow font-medium">❄️ এসি / ফ্রিজ</button>
-<button onclick="showM('রঙ মিস্ত্রি')" class="bg-white p-4 rounded-2xl shadow font-medium">🎨 রঙ মিস্ত্রি</button>
-<button onclick="showM('কাঠ মিস্ত্রি')" class="bg-white p-4 rounded-2xl shadow font-medium">🪓 কাঠ মিস্ত্রি</button>
-<button onclick="showM('রাজ মিস্ত্রি')" class="bg-white p-4 rounded-2xl shadow font-medium">🧱 রাজ মিস্ত্রি</button>
-<button onclick="showM('টাইলস')" class="bg-white p-4 rounded-2xl shadow font-medium">🔧 টাইলস</button>
-<button onclick="showM('ওয়েল্ডিং')" class="bg-white p-4 rounded-2xl shadow font-medium">⚒️ ওয়েল্ডিং</button>
-<button onclick="showM('টিভি')" class="bg-white p-4 rounded-2xl shadow font-medium">📺 টিভি</button>
-<button onclick="showM('CCTV/WiFi')" class="bg-white p-4 rounded-2xl shadow font-medium">📹 CCTV/WiFi</button>
-<button onclick="showM('থাই-গ্লাস')" class="bg-white p-4 rounded-2xl shadow font-medium">🏠 থাই-গ্লাস</button>
-<button onclick="showM('তালা-চাবি')" class="bg-white p-4 rounded-2xl shadow font-medium">🔑 তালা-চাবি</button>
-</div>
+<div id="box" class="mt-4 bg-white p-4 rounded-2xl shadow">
+<div class="text-center">🚀 Rocket: <b>01908202027</b></div>
+<div id="count" class="text-center font-bold mt-2 text-purple-600">৬৪ জেলা লোড হইছে</div>
+<div class="mt-3 grid grid-cols-2 gap-2" id="list"></div>
 </div>
 
-<div id="pop" class="fixed inset-0 bg-black/70 hidden z-[9999] flex items-center justify-center p-4">
-<div class="bg-white rounded-2xl p-5 w-full max-w-sm text-center">
-<h3 id="popTitle" class="font-bold text-lg mb-3"></h3>
-<div class="bg-gray-50 p-3 rounded-xl flex justify-between items-center">
-<div class="text-left"><b id="mistriName" class="text-sm"></b><br><span class="text-xs">ফরিদপুর - 01609035166 | ⭐5</span></div>
-<a id="callBtn" href="tel:01609035166" class="bg-blue-600 text-white px-4 py-2 rounded-full text-xs font-bold">কল</a>
-</div>
-<a href="tel:01609035166" class="block mt-3 bg-green-600 text-white py-3 rounded-xl font-bold text-center">📞 হটলাইন: 01609035166</a>
-<button onclick="document.getElementById('pop').classList.add('hidden')" class="mt-3 bg-gray-200 w-full py-2 rounded-xl font-bold">বন্ধ করুন</button>
-</div>
+<a href="tel:01908202027" class="w-full bg-green-600 text-white p-4 rounded-xl mt-4 block text-center font-bold">📞 Rocket কল - 01908202027</a>
 </div>
 
 <script>
-function showM(name){
-document.getElementById('pop').classList.remove('hidden');
-document.getElementById('popTitle').innerText=name;
-document.getElementById('mistriName').innerText=name+' মিস্ত্রি';
+let zilas=["ঢাকা","ফরিদপুর","গাজীপুর","গোপালগঞ্জ","কিশোরগঞ্জ","মাদারীপুর","মানিকগঞ্জ","মুন্সিগঞ্জ","নারায়ণগঞ্জ","নরসিংদী","রাজবাড়ী","শরীয়তপুর","টাঙ্গাইল","চট্টগ্রাম","কক্সবাজার","বান্দরবান","ব্রাহ্মণবাড়িয়া","চাঁদপুর","কুমিল্লা","খাগড়াছড়ি","ফেনী","লক্ষ্মীপুর","নোয়াখালী","রাঙামাটি","রাজশাহী","বগুড়া","চাঁপাইনবাবগঞ্জ","জয়পুরহাট","নওগাঁ","নাটোর","পাবনা","সিরাজগঞ্জ","খুলনা","বাগেরহাট","চুয়াডাঙ্গা","যশোর","ঝিনাইদহ","কুষ্টিয়া","মাগুরা","মেহেরপুর","নড়াইল","সাতক্ষীরা","বরিশাল","বরগুনা","ভোলা","ঝালকাঠি","পটুয়াখালী","পিরোজপুর","সিলেট","হবিগঞ্জ","মৌলভীবাজার","সুনামগঞ্জ","রংপুর","দিনাজপুর","গাইবান্ধা","কুড়িগ্রাম","লালমনিরহাট","নীলফামারী","পঞ্চগড়","ঠাকুরগাঁও","ময়মনসিংহ","জামালপুর","নেত্রকোনা","শেরপুর"];
+function filter(){
+ let z=document.getElementById('zila').value||"সব জেলা";
+ document.getElementById('count').innerText=z+" - ৬৪ জেলায় ডেলিভারি";
+ let h=""; zilas.slice(0,8).forEach(n=>{ h+=`<div class="bg-gray-100 p-2 rounded text-center text-xs"><b>${n}</b><br>🚚 ডেলিভারি</div>`; });
+ document.getElementById('list').innerHTML=h;
 }
-document.addEventListener('contextmenu', e=>e.preventDefault());
-</script>
-</body>
-</html>
+filter();
+</script></body></html>
