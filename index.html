@@ -3,61 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALL STYLE 36 Ghor - ONLY FOR SHOE</title>
+<title>ONLY FOR SHOE - এখনি অর্ডার করুন</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter, sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
 body{background:#f3f4f6;max-width:430px;margin:0 auto;padding-bottom:90px}
-.header{background:#000;color:#fff;padding:20px 18px 28px;border-radius:0 0 28px 28px}
-.profile-card{background:#fff;margin:-20px 15px 0;padding:14px;border-radius:16px;display:flex;gap:12px;align-items:center;box-shadow:0 6px 20px rgba(0,0,0,0.1);border:1px solid #eee}
-.avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#000,#444);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;flex-shrink:0}
-.card{background:#fff;border-radius:18px;padding:12px;text-align:center;position:relative;box-shadow:0 2px 10px rgba(0,0,0,0.06);cursor:pointer}
-.shoe-img{width:100%;height:95px;object-fit:contain;background:#f8f8f8;border-radius:12px}
-.input{width:100%;background:#f1f3f5;padding:14px;border:none;border-radius:12px;margin:6px 0;font-size:14px}
+.header{background:#000;color:#fff;padding:22px 18px 26px;border-radius:0 0 28px 28px;text-align:center}
+.notice{background:#25D366;color:#fff;margin:12px 15px;padding:10px 14px;border-radius:12px;font-size:12px;font-weight:800;text-align:center;animation:blink 1.5s infinite}
+@keyframes blink{0%{opacity:1}50%{opacity:0.8}100%{opacity:1}}
+.card{background:#fff;border-radius:18px;padding:12px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.06);cursor:pointer;position:relative;overflow:hidden}
+.shoe-img{width:100%;height:105px;object-fit:contain;background:#f8f8f8;border-radius:12px;transition:0.3s}
+.card:active.shoe-img{transform:scale(1.05)}
+.price-badge{position:absolute;top:8px;right:8px;background:#000;color:#fff;font-size:11px;padding:4px 8px;border-radius:20px;font-weight:800}
+.input{width:100%;background:#f1f3f5;padding:14px;border:none;border-radius:12px;margin:6px 0}
 .nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);max-width:430px;width:100%;background:#000;display:flex;justify-content:space-around;padding:12px 0 14px;border-radius:22px 22px 0 0;z-index:100}
-.nav button{background:none;border:none;color:#777;font-size:11px;cursor:pointer}.nav.active{color:#fff!important;font-weight:800}
-#zoomModal{position:fixed;top:0;left:0;width:100%;height:100%;background:#000;display:none;z-index:9999;flex-direction:column}
+.nav button{background:none;border:none;color:#777;font-size:11px}.nav.active{color:#fff!important}
+#zoomModal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);display:none;z-index:9999;flex-direction:column}
 #zoomModal.show{display:flex}
-.zoom-top{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;color:#fff}
-.zoom-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:15px}
-.zoom-img{max-width:95%;max-height:60vh;border-radius:18px;background:#fff;padding:8px}
 .zoom-actions{display:flex;gap:10px;padding:16px}
 .btn-back{background:#222;color:#fff;border:1px solid #444;padding:14px 20px;border-radius:14px;font-weight:800;flex:1}
 .btn-order{background:#25D366;color:#fff;border:none;padding:14px 20px;border-radius:14px;font-weight:900;flex:1.5}
-.profile-view{padding:15px}
-.stat{display:flex;justify-content:space-between;background:#fff;padding:12px 14px;border-radius:12px;margin:8px 0;box-shadow:0 1px 4px rgba(0,0,0,0.05)}
 </style>
 </head>
 <body>
 
-<!-- HOME -->
 <div id="homeView">
   <div class="header">
-    <div style="display:flex;justify-content:space-between;align-items:center">
-      <h1 style="font-size:28px;font-weight:900;line-height:0.9">ALL STYLE<br>36 Ghor</h1>
-      <button onclick="showView('profile')" style="background:#fff;color:#000;border:none;width:38px;height:38px;border-radius:50%;font-weight:900">O</button>
-    </div>
-    <p style="font-size:12px;color:#aaa;margin-top:6px">ONLY FOR SHOE • Premium Collection</p>
+    <h1 style="font-size:30px;font-weight:900;line-height:0.9">ONLY FOR SHOE</h1>
+    <p style="font-size:13px;margin-top:8px;font-weight:800;letter-spacing:0.5px">এখনি অর্ডার করুন 🔥</p>
+    <p style="font-size:11px;color:#aaa;margin-top:4px">ALL STYLE 36 Ghor • Premium Collection</p>
   </div>
 
-  <!-- সুন্দর প্রোফাইল কার্ড -->
-  <div class="profile-card">
-    <div class="avatar">O</div>
-    <div style="flex:1">
-      <b style="font-size:15px">ONLY FOR SHOE</b><br>
-      <span style="font-size:12px;color:#666">📍 Dhaka, Bangladesh • ⭐ 4.9 (2.3k reviews)</span><br>
-      <span style="font-size:11px;background:#000;color:#fff;padding:2px 8px;border-radius:20px;margin-top:4px;display:inline-block">✓ Verified Seller • COD Available</span>
-    </div>
-    <button onclick="openWA()" style="background:#25D366;color:#fff;border:none;padding:8px 12px;border-radius:20px;font-size:12px;font-weight:800">WhatsApp</button>
-  </div>
+  <div class="notice">👇 নিচের ছবিতে ক্লিক করলে জুম হবে + দাম দেখা যাবে 👇</div>
 
-  <div style="padding:14px 15px">
+  <div style="padding:0 15px 14px">
     <div style="display:flex;justify-content:space-between"><h3 style="font-weight:900">Trending Shoes</h3><span id="count" style="font-size:12px;color:gray">0 Items</span></div>
     <div id="shoeGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px"></div>
-    <div id="emptyMsg" style="text-align:center;color:gray;margin-top:40px;background:#fff;padding:30px;border-radius:16px"><p style="font-size:40px">👟</p><p style="font-weight:800;margin-top:8px">এখনো কোনো জুতা নাই</p><p style="font-size:12px">+ জুতা Add এ ক্লিক করে প্রথম জুতা Add করুন</p></div>
+    <div id="emptyMsg" style="text-align:center;color:gray;margin-top:30px;background:#fff;padding:30px;border-radius:16px"><p style="font-size:40px">👟</p><b>এখনো কোনো জুতা নাই</b><p style="font-size:12px;margin-top:6px">+ Add এ ক্লিক করে জুতা Add করুন</p></div>
   </div>
 </div>
 
-<!-- ADD VIEW -->
 <div id="addView" style="display:none;padding:15px">
   <div style="background:#fff;border-radius:20px;padding:16px">
     <h3 style="font-weight:900">➕ নতুন জুতা Add</h3>
@@ -70,85 +54,53 @@ body{background:#f3f4f6;max-width:430px;margin:0 auto;padding-bottom:90px}
       <p id="status" style="font-size:12px;color:green"></p>
     </div>
     <button onclick="saveShoe()" style="width:100%;background:#000;color:#fff;padding:15px;border:none;border-radius:14px;font-weight:900;margin-top:12px">✅ সেভ করুন</button>
-    <button onclick="showView('home')" style="width:100%;background:#eee;border:none;padding:12px;border-radius:12px;margin-top:8px;font-weight:700">← Back to Home</button>
+    <button onclick="showView('home')" style="width:100%;background:#eee;border:none;padding:12px;border-radius:12px;margin-top:8px;font-weight:700">← Back</button>
   </div>
 </div>
 
-<!-- PROFILE VIEW - সুন্দর করে -->
-<div id="profileView" style="display:none">
-  <div class="header" style="text-align:center;padding:35px 20px 60px">
-    <div style="width:80px;height:80px;background:#fff;color:#000;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:900">O</div>
-    <h2 style="margin-top:12px;font-weight:900">ONLY FOR SHOE</h2>
-    <p style="font-size:13px;color:#aaa">ALL STYLE 36 Ghor • Premium Footwear</p>
-  </div>
-  <div style="margin:-35px 15px 0">
-    <div style="background:#fff;border-radius:20px;padding:16px;box-shadow:0 8px 25px rgba(0,0,0,0.1)">
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;text-align:center">
-        <div><b style="font-size:18px">2.3k</b><br><span style="font-size:11px;color:gray">Followers</span></div>
-        <div><b style="font-size:18px">4.9★</b><br><span style="font-size:11px;color:gray">Rating</span></div>
-        <div><b style="font-size:18px" id="totalShoes">0</b><br><span style="font-size:11px;color:gray">Shoes</span></div>
-      </div>
-      <div style="margin-top:16px">
-        <div class="stat"><span>📞 WhatsApp Number</span><b>01908202027</b></div>
-        <div class="stat"><span>📍 Location</span><b>Dhaka, BD</b></div>
-        <div class="stat"><span>🚚 Delivery</span><b>COD Available</b></div>
-        <div class="stat"><span>✅ Verified</span><b style="color:green">100% Original</b></div>
-      </div>
-      <button onclick="openWA()" style="width:100%;background:#25D366;color:#fff;border:none;padding:14px;border-radius:14px;font-weight:900;margin-top:14px">💬 WhatsApp এ মেসেজ দিন</button>
-      <button onclick="showView('home')" style="width:100%;background:#000;color:#fff;border:none;padding:12px;border-radius:12px;margin-top:8px">← Back to Shop</button>
-    </div>
-  </div>
-</div>
-
-<!-- ZOOM + BACK + ORDER CONFIRM -->
+<!-- ZOOM + BACK + ORDER + PRICE SHOW -->
 <div id="zoomModal">
-  <div class="zoom-top">
-    <button onclick="closeZoom()" class="btn-back" style="flex:0;padding:10px 16px">← Back</button>
-    <span style="font-weight:800;font-size:13px">Zoom View</span>
+  <div style="display:flex;justify-content:space-between;padding:14px 16px;color:#fff">
+    <button onclick="closeZoom()" class="btn-back" style="padding:10px 16px">← Back</button>
+    <span style="font-weight:800;font-size:12px;margin-top:10px">জুম করে দাম দেখুন</span>
     <span style="width:70px"></span>
   </div>
-  <div class="zoom-body">
-    <img id="zoomImg" class="zoom-img" src="">
-    <h3 id="zoomTitle" style="color:#fff;margin-top:14px;font-weight:900;text-align:center"></h3>
-    <p style="color:#aaa;font-size:12px;margin-top:6px">Pinch করে জুম করুন</p>
+  <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:15px">
+    <img id="zoomImg" style="max-width:95%;max-height:55vh;border-radius:18px;background:#fff;padding:8px">
+    <h2 id="zoomPrice" style="color:#25D366;margin-top:16px;font-weight:900;font-size:26px"></h2>
+    <h3 id="zoomTitle" style="color:#fff;margin-top:6px;font-weight:700;text-align:center;font-size:15px"></h3>
+    <p style="color:#aaa;font-size:12px;margin-top:8px">👆 Pinch করে আরও জুম করুন</p>
   </div>
   <div class="zoom-actions">
     <button onclick="closeZoom()" class="btn-back">← Back</button>
-    <button onclick="confirmOrder()" class="btn-order">✅ Order Confirm - 01908202027</button>
+    <button onclick="confirmOrder()" class="btn-order">✅ Order Confirm</button>
   </div>
 </div>
 
 <div class="nav">
-  <button onclick="showView('home')" id="bHome" class="active">🏠<br>Home</button>
-  <button onclick="showView('add')" id="bAdd">➕<br>Add</button>
-  <button onclick="showView('profile')" id="bProf">👤<br>Profile</button>
+  <button onclick="showView('home')" id="bHome" class="nav active">🏠<br>Home</button>
+  <button onclick="showView('add')" id="bAdd" class="nav">➕<br>Add</button>
   <button onclick="openWA()" style="color:#25D366">💬<br>WhatsApp</button>
 </div>
 
 <script>
 const WA="8801908202027";
-let tempImage="", currentTitle="";
+let tempImage="", currentTitle="", currentPrice="";
 let shoes = JSON.parse(localStorage.getItem('onlyShoes')||"[]");
 
 function showView(v){
   document.getElementById('homeView').style.display=v==='home'?'block':'none';
   document.getElementById('addView').style.display=v==='add'?'block':'none';
-  document.getElementById('profileView').style.display=v==='profile'?'block':'none';
-  document.getElementById('bHome').className=v==='home'?'active':'';
-  document.getElementById('bAdd').className=v==='add'?'active':'';
-  document.getElementById('bProf').className=v==='profile'?'active':'';
+  document.getElementById('bHome').className=v==='home'?'nav active':'nav';
+  document.getElementById('bAdd').className=v==='add'?'nav active':'nav';
   if(v==='home') renderShoes();
 }
-
-document.getElementById('picUpload').addEventListener('change', function(e){
+document.getElementById('picUpload').addEventListener('change',function(e){
   const file=e.target.files[0]; if(!file) return;
-  if(file.size>2.5*1024*1024){ alert("ছবি 2.5MB এর কম দিন"); return; }
+  if(file.size>2.5*1024*1024){alert("ছবি 2.5MB এর কম দিন");return}
   document.getElementById('status').innerText="⏳ লোড হচ্ছে...";
-  const r=new FileReader();
-  r.onload=ev=>{ tempImage=ev.target.result; document.getElementById('previewBox').innerHTML=`<img src="${tempImage}" style="width:100%;max-height:220px;object-fit:contain;border-radius:12px;border:2px solid #000">`; document.getElementById('status').innerText="✅ রেডি!"; };
-  r.readAsDataURL(file);
+  const r=new FileReader(); r.onload=ev=>{ tempImage=ev.target.result; document.getElementById('previewBox').innerHTML=`<img src="${tempImage}" style="width:100%;max-height:220px;object-fit:contain;border-radius:12px;border:2px solid #000">`; document.getElementById('status').innerText="✅ রেডি!"; }; r.readAsDataURL(file);
 });
-
 function saveShoe(){
   const name=document.getElementById('pName').value, orig=document.getElementById('pOrig').value, disc=document.getElementById('pDisc').value;
   if(!name){alert("নাম দিন");return} if(!tempImage){alert("ছবি দিন");return}
@@ -156,26 +108,29 @@ function saveShoe(){
   document.getElementById('pName').value=""; document.getElementById('pOrig').value=""; document.getElementById('pDisc').value=""; tempImage=""; document.getElementById('previewBox').innerHTML=""; document.getElementById('status').innerText="";
   alert("✅ সেভ হয়েছে!"); showView('home');
 }
-
 function renderShoes(){
-  const grid=document.getElementById('shoeGrid'), count=document.getElementById('count'), empty=document.getElementById('emptyMsg'), total=document.getElementById('totalShoes');
-  grid.innerHTML=""; count.innerText=shoes.length+" Items"; total.innerText=shoes.length;
+  const grid=document.getElementById('shoeGrid'), count=document.getElementById('count'), empty=document.getElementById('emptyMsg');
+  grid.innerHTML=""; count.innerText=shoes.length+" Items";
   if(shoes.length===0){ empty.style.display="block"; return } empty.style.display="none";
   shoes.forEach(s=>{
     const d=document.createElement('div'); d.className="card";
-    d.innerHTML=`<img class="shoe-img" src="${s.img}"><b style="font-size:13px">${s.name}</b><br><span style="font-size:12px;font-weight:700">৳${s.disc||s.orig}</span> ${s.orig&&s.disc?`<s style="font-size:11px;color:#999">৳${s.orig}</s>`:''}`;
-    d.onclick=()=>zoomPic(s.img,`${s.name} - ৳${s.disc||s.orig}`); grid.appendChild(d);
+    d.innerHTML=`<span class="price-badge">৳${s.disc||s.orig}</span><img class="shoe-img" src="${s.img}"><b style="font-size:12px;display:block;margin-top:6px">${s.name}</b><span style="font-size:11px;color:#666">জুমে দাম দেখুন</span>`;
+    d.onclick=()=>zoomPic(s.img,s.name,s.disc||s.orig,s.orig); grid.appendChild(d);
   });
 }
-
-function zoomPic(src,title){ document.getElementById('zoomImg').src=src; document.getElementById('zoomTitle').innerText=title||''; currentTitle=title||'এই জুতা'; document.getElementById('zoomModal').classList.add('show'); }
+function zoomPic(src,name,price,orig){
+  document.getElementById('zoomImg').src=src;
+  document.getElementById('zoomTitle').innerText=name;
+  document.getElementById('zoomPrice').innerHTML=`৳${price} ${orig && orig!=price?`<s style="font-size:14px;color:#888">৳${orig}</s>`:''}`;
+  currentTitle=`${name} - ৳${price}`; currentPrice=price;
+  document.getElementById('zoomModal').classList.add('show');
+}
 function closeZoom(){ document.getElementById('zoomModal').classList.remove('show'); }
 function confirmOrder(){
-  const msg=encodeURIComponent(`✅ ORDER CONFIRM\n\nভাই, ${currentTitle} টা Confirm করলাম\n\nনাম: \nঠিকানা: \nসাইজ: \n\nomistri.vercel.app\n01908202027`);
+  const msg=encodeURIComponent(`✅ ONLY FOR SHOE - ORDER CONFIRM\n\n👟 ${currentTitle}\n\nআমার নাম: \nঠিকানা: \nসাইজ: \n\nলিংক: sobmistri-bd.vercel.app\n01908202027`);
   window.open(`https://wa.me/${WA}?text=${msg}`,'_blank');
 }
-function openWA(){ window.open(`https://wa.me/${WA}?text=${encodeURIComponent("আসসালামু আলাইকুম ভাই, ONLY FOR SHOE থেকে জুতা লাগবে")}`,'_blank'); }
-
+function openWA(){ window.open(`https://wa.me/${WA}?text=${encodeURIComponent("আসসালামু আলাইকুম, ONLY FOR SHOE থেকে জুতা লাগবে")}`,'_blank'); }
 renderShoes(); showView('home');
 </script>
 </body>
