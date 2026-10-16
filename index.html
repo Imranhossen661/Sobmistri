@@ -1,106 +1,104 @@
-"use client";
-import { useState } from "react";
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONLY FOR SHOE - ALL STYLE 36 Ghor</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
+body{background:#f2f2f5;max-width:430px;margin:0 auto;padding-bottom:85px}
+.header{background:#000;color:#fff;padding:35px 20px 40px;border-radius:0 0 28px 28px}
+.badge{background:#fff;margin:-18px 15px 0;padding:10px 12px;border-radius:12px;font-size:13px;font-weight:800;display:flex;gap:8px;align-items:center;box-shadow:0 4px 15px rgba(0,0,0,0.1)}
+.banner{background:linear-gradient(90deg,#b8d8e8,#7ab5d6);margin:12px 15px;border-radius:16px;padding:18px;display:flex;justify-content:space-between;align-items:center;height:95px}
+.card{background:#fff;border-radius:16px;padding:12px;text-align:center;position:relative;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+.tag{position:absolute;top:8px;left:8px;font-size:10px;color:#fff;padding:4px 7px;border-radius:5px;font-weight:900}
+.nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);max-width:430px;width:100%;background:#000;color:#fff;display:flex;justify-content:space-around;padding:12px 0;border-radius:20px 20px 0 0;z-index:99}
+.nav button{background:none;border:none;color:#aaa;font-size:11px;line-height:1.2}
+.nav .active{color:#fff;font-weight:800}
+.input{width:100%;background:#f1f3f5;padding:14px;border:none;border-radius:12px;margin:6px 0;font-size:14px}
+.btn-black{width:100%;background:#000;color:#fff;padding:14px;border:none;border-radius:12px;font-weight:800;font-size:15px}
+.cat-btn{padding:9px 16px;border-radius:12px;border:none;font-weight:800;font-size:13px;margin-right:8px;cursor:pointer}
+.cat-active{background:#000;color:#fff}
+.cat-normal{background:#e9e9eb;color:#000}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+</style>
+</head>
+<body>
 
-export default function Profile() {
-  const [activeCat, setActiveCat] = useState("Sneakers");
-
-  const categories = [
-    { name:"Sneakers", icon:"👟" },
-    { name:"Formal", icon:"👞" },
-    { name:"Sports", icon:"🏃" },
-    { name:"Sandals", icon:"🩴" },
-  ];
-
-  const shoes = [
-    { id:1, name:"Nike Air Style 36", price:1850, original:2650, rating:"4.8", count:120, tag:"-30%", color:"bg-red-500" },
-    { id:2, name:"Adidas Classic Jogger", price:2200, original:3100, rating:"4.7", count:95, tag:"BESTSELLER", color:"bg-green-500" },
-    { id:3, name:"Puma Sport Running", price:1990, original:2500, rating:"4.6", count:78, tag:"", oldPrice:2650, color:"" },
-    { id:4, name:"Leather Loafer Classic", price:1650, original:2000, rating:"4.9", count:62, tag:"HOT", color:"bg-orange-500" },
-    { id:5, name:"Canvas Sneaker Casual", price:1300, original:1650, rating:"4.5", count:44, tag:"", oldPrice:2650, color:"" },
-    { id:6, name:"Formal Oxford Leather", price:2350, original:3000, rating:"4.8", count:51, tag:"", color:"" },
-  ];
-
-  return (
-    <div className="bg-[#f2f2f5] min-h-screen max-w-[430px] mx-auto relative pb-24 font-sans">
-      {/* TOP BLACK PROFILE HEADER */}
-      <div className="bg-black text-white px-5 pt-12 pb-8 rounded-b-[28px]">
-        <div className="flex justify-between items-start">
-          <h1 className="text-[34px] font-black leading-[0.85] tracking-tight">ALL STYLE<br/>36 Ghor</h1>
-          <div className="flex gap-5 mt-2 text-[22px]">
-            <span>⌕</span>
-            <span>♡</span>
-            <div className="relative"><span>🛒</span><span className="absolute -top-2 -right-2 bg-red-500 text-[10px] w-5 h-5 rounded-full flex items-center justify-center">2</span></div>
-          </div>
-        </div>
-      </div>
-
-      {/* TRUSTED BADGE */}
-      <div className="mx-4 -mt-4 bg-white rounded-xl px-3 py-2.5 flex items-center gap-2 shadow-sm border border-gray-100">
-        <span className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">✓</span>
-        <p className="text-[13px] font-bold">বাংলাদেশের বিশ্বস্ত জুতার শপ • COD Available • 100% Original</p>
-      </div>
-
-      {/* NEW COLLECTION BANNER */}
-      <div className="mx-4 mt-3 bg-gradient-to-r from-[#b8d8e8] to-[#7ab5d6] rounded-2xl p-4 flex justify-between items-center h-[95px]">
-        <div>
-          <h2 className="font-black text-[22px] leading-none">NEW COLLECTION 2025</h2>
-          <p className="text-[13px] mt-1 font-medium">Up to 30% OFF on All Shoes</p>
-        </div>
-        <div className="relative">
-          <img src="https://i.ibb.co/Q8x5tLz/sneaker.png" className="w-[110px] -mt-2" alt="shoe" />
-          <button className="bg-black text-white text-[12px] px-3 py-1.5 rounded-full font-bold absolute -bottom-1 right-0">Shop Now →</button>
-        </div>
-      </div>
-
-      {/* SHOP BY CATEGORY */}
-      <div className="px-4 mt-6">
-        <div className="flex justify-between items-center">
-          <h3 className="font-bold text-[18px]">Shop by Category</h3>
-          <span className="text-[14px] text-gray-500">See All</span>
-        </div>
-        <div className="flex gap-2 mt-3 overflow-x-auto scrollbar-hide">
-          {categories.map(cat=>(
-            <button key={cat.name} onClick={()=>setActiveCat(cat.name)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-[13px] font-bold whitespace-nowrap border ${activeCat===cat.name? "bg-black text-white border-black" : "bg-[#e9e9eb] text-black border-transparent"}`}>
-              <span>{cat.icon}</span> {cat.name}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* TRENDING SHOES */}
-      <div className="px-4 mt-7">
-        <div className="flex justify-between items-center">
-          <h3 className="font-bold text-[20px]">Trending Shoes for You</h3>
-          <span className="text-[13px] text-gray-500">126 Items</span>
-        </div>
-
-        <div className="grid grid-cols-2 gap-3 mt-4">
-          {shoes.map(shoe=>(
-            <div key={shoe.id} className="bg-white rounded-2xl p-2.5 shadow-[0_2px_10px_rgba(0,0,0,0.05)] relative">
-              {shoe.tag && <span className={`absolute top-2.5 left-2.5 text-[10px] font-black px-2 py-1 rounded text-white ${shoe.color}`}>{shoe.tag}</span>}
-              <img src={`https://via.placeholder.com/200x120/f8f8f8/111?text=Shoe`} className="w-full h-[90px] object-contain mt-2" />
-              <div className="text-center mt-2">
-                <p className="text-[13px] font-bold leading-tight">{shoe.name}</p>
-                <p className="text-[12px] text-gray-500 mt-1">{shoe.rating} <span className="text-yellow-500">★</span> ({shoe.count})</p>
-                <div className="mt-1">
-                  {shoe.oldPrice && <span className="text-[11px] line-through text-gray-400 mr-1">৳{shoe.oldPrice.toLocaleString()}</span>}
-                  <span className="font-black text-[15px]">৳{shoe.price.toLocaleString()}</span>
-                  <span className="text-[11px] line-through text-gray-400 ml-1">৳{shoe.original.toLocaleString()}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* BOTTOM NAV - HOME PAGE KOI FIX */}
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 max-w-[430px] w-full bg-black text-white flex justify-around items-center py-3 px-2 rounded-t-[24px]">
-        <button className="flex flex-col items-center text-white"><span className="text-[22px]">⌂</span><span className="text-[10px] mt-1 font-bold">Home</span><div className="w-6 h-1 bg-white rounded-full mt-1"></div></button>
-        <button className="flex flex-col items-center text-gray-400"><span className="text-[20px]">🛒+</span><span className="text-[10px] mt-1">Add Juta</span></button>
-        <button className="flex flex-col items-center text-gray-400"><span className="text-[20px]">📋</span><span className="text-[10px] mt-1">Orders</span></button>
-        <button className="flex flex-col items-center text-gray-400"><span className="text-[20px]">🟢</span><span className="text-[10px] mt-1">WhatsApp</span></button>
-      </div>
+<!-- HOME VIEW -->
+<div id="homeView">
+  <div class="header">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start">
+      <h1 style="font-size:33px;font-weight:900;line-height:0.9">ALL STYLE<br>36 Ghor</h1>
+      <div style="display:flex;gap:16px;font-size:22px"><span>⌕</span><span>♡</span><span>🛒<sup style="background:red;font-size:10px;padding:2px 5px;border-radius:50%">2</sup></span></div>
     </div>
-  );
+  </div>
+  <div class="badge"><span style="background:#00c950;color:#fff;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center">✓</span> বাংলাদেশের বিশ্বস্ত জুতার শপ • COD Available • 100% Original</div>
+  <div class="banner"><div><h2 style="font-weight:900;font-size:19px">NEW COLLECTION 2025</h2><p style="font-size:13px;margin-top:2px">Up to 30% OFF on All Shoes</p></div><button style="background:#000;color:#fff;border:none;padding:7px 14px;border-radius:20px;font-size:12px;font-weight:700;margin-top:30px">Shop Now →</button></div>
+
+  <div style="padding:0 15px;margin-top:18px">
+    <div style="display:flex;justify-content:space-between"><h3 style="font-weight:800">Shop by Category</h3><span style="font-size:13px;color:gray">See All</span></div>
+    <div style="margin-top:10px;overflow-x:auto;white-space:nowrap">
+      <button class="cat-btn cat-active">👟 Sneakers</button>
+      <button class="cat-btn cat-normal">👞 Formal</button>
+      <button class="cat-btn cat-normal">🏃 Sports</button>
+      <button class="cat-btn cat-normal">🩴 Sandals</button>
+    </div>
+  </div>
+
+  <div style="padding:0 15px;margin-top:20px">
+    <div style="display:flex;justify-content:space-between"><h3 style="font-weight:800;font-size:18px">Trending Shoes for You</h3><span style="font-size:13px;color:gray">126 Items</span></div>
+    <div class="grid">
+      <div class="card"><span class="tag" style="background:#ef4444">-30%</span><div style="height:90px;background:#f8f8f8;border-radius:12px;margin:10px 0;display:flex;align-items:center;justify-content:center;font-size:40px">👟</div><b style="font-size:13px">Nike Air Style 36</b><br><span style="font-size:11px;color:#666">4.8 ★ (120)</span><br><b>৳1,850</b> <s style="font-size:11px;color:#999">৳2,650</s></div>
+      <div class="card"><span class="tag" style="background:#22c55e">BESTSELLER</span><div style="height:90px;background:#f8f8f8;border-radius:12px;margin:10px 0;display:flex;align-items:center;justify-content:center;font-size:40px">👟</div><b style="font-size:13px">Adidas Classic Jogger</b><br><span style="font-size:11px;color:#666">4.7 ★ (95)</span><br><b>৳2,200</b> <s style="font-size:11px;color:#999">৳3,100</s></div>
+      <div class="card"><div style="height:90px;background:#f8f8f8;border-radius:12px;margin:10px 0;display:flex;align-items:center;justify-content:center;font-size:40px">👟</div><b style="font-size:13px">Puma Sport Running</b><br><span style="font-size:11px;color:#666">4.6 ★ (78)</span><br><span style="font-size:11px;text-decoration:line-through">৳2,650</span> <b>৳1,990</b> <s style="font-size:11px">৳2,500</s></div>
+      <div class="card"><span class="tag" style="background:#f97316">HOT</span><div style="height:90px;background:#f8f8f8;border-radius:12px;margin:10px 0;display:flex;align-items:center;justify-content:center;font-size:40px">👞</div><b style="font-size:13px">Leather Loafer Classic</b><br><span style="font-size:11px;color:#666">4.9 ★ (62)</span><br><b>৳1,650</b> <s style="font-size:11px">৳2,000</s></div>
+      <div class="card"><div style="height:90px;background:#f8f8f8;border-radius:12px;margin:10px 0;display:flex;align-items:center;justify-content:center;font-size:40px">👟</div><b style="font-size:13px">Canvas Sneaker</b><br><span style="font-size:11px;color:#666">4.5 ★ (44)</span><br><b>৳1,300</b> <s style="font-size:11px">৳1,650</s></div>
+      <div class="card"><div style="height:90px;background:#f8f8f8;border-radius:12px;margin:10px 0;display:flex;align-items:center;justify-content:center;font-size:40px">👞</div><b style="font-size:13px">Formal Oxford</b><br><span style="font-size:11px;color:#666">4.8 ★ (51)</span><br><b>৳2,350</b> <s style="font-size:11px">৳3,000</s></div>
+    </div>
+  </div>
+</div>
+
+<!-- ADD VIEW - MANUAL (আপনি নিজে বসাবেন) -->
+<div id="addView" style="display:none;padding:15px">
+  <div style="background:#fff;border-radius:20px;padding:16px">
+    <h2 style="font-weight:900">ONLY FOR SHOE - নতুন জুতা</h2>
+    <p style="font-size:12px;color:gray;margin-top:4px">অটো না, আপনি নিজে বসাবেন</p>
+    <input id="pName" class="input" placeholder="নাম: Black Oxford Formal">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      <input id="pOriginal" class="input" placeholder="Original Price: 4500">
+      <input id="pDiscount" class="input" placeholder="Discount: 2999">
+    </div>
+    <select class="input"><option>Sneakers</option><option>Formal</option><option>Sports</option><option>Sandals</option></select>
+    <input type="file" class="input" style="border:2px dashed #bbb">
+    <div style="background:#f8f8f8;border-radius:12px;padding:10px;margin-top:8px;text-align:center;font-size:13px;color:#666" id="preview">Preview: নাম লিখুন</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px">
+      <button onclick="showView('home')" class="input" style="text-align:center;font-weight:700">বাতিল</button>
+      <button class="btn-black">✅ পোস্ট</button>
+    </div>
+  </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="nav">
+  <button onclick="showView('home')" id="bHome" class="active">🏠<br>36 ঘর<br>Home</button>
+  <button onclick="showView('add')" id="bAdd">➕<br>+ জুতা<br>Add</button>
+  <button>📦<br>0<br>Orders</button>
+  <button>💬<br>WhatsApp</button>
+</div>
+
+<script>
+function showView(v){
+  document.getElementById('homeView').style.display = v==='home' ? 'block' : 'none';
+  document.getElementById('addView').style.display = v==='add' ? 'block' : 'none';
+  document.getElementById('bHome').className = v==='home' ? 'active' : '';
+  document.getElementById('bAdd').className = v==='add' ? 'active' : '';
+  window.scrollTo(0,0);
 }
+document.getElementById('pName').addEventListener('input', e=>{
+  document.getElementById('preview').innerText = 'Preview: ' + e.target.value;
+});
+showView('home');
+</script>
+</body>
+</html>
