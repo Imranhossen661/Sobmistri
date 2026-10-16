@@ -2,127 +2,128 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>ONLY SHOE - Dhaka to 64 Zela | 01908202027</title>
+<title>ALL STYLE - 36 GHOR - Dhaka to 64 | 01908202027</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@600;700&display=swap');*{font-family:'Hind Siliguri',sans-serif}.no-scrollbar::-webkit-scrollbar{display:none}</style>
 </head>
-<body class="bg-[#f5f5f0]">
+<body class="bg-[#fafaf7]">
 <div class="max-w-[500px] mx-auto bg-white min-h-screen shadow-2xl pb-[90px]">
 
-<div class="bg-black text-white text-center py-2 text-[11px] font-bold sticky top-0 z-[999]">👟 ONLY FOR SHOE • ঢাকা টু ৬৪ জেলা • Rocket 01908202027</div>
+<div class="bg-black text-white text-center py-2 text-[11px] font-bold sticky top-0 z-[999]">👟 ALL STYLE • 36 ঘর • ঢাকা টু ৬৪ জেলা • 01908202027</div>
 
-<div class="bg-white border-b p-3 sticky top-[28px] z-[998]">
+<div class="bg-white p-3 sticky top-[28px] z-[998] border-b">
 <div class="flex justify-between items-center">
-<div class="flex items-center gap-2"><div class="bg-black text-white w-10 h-10 rounded-full flex items-center justify-center font-black">S</div><div><div class="font-black text-[18px] leading-none">ONLY SHOE</div><div class="text-[10px] text-gray-500">ঢাকা টু ৬৪ জেলা • 100 ঘর</div></div></div>
-<select id="district" onchange="render()" class="bg-black text-white text-xs font-bold px-3 py-2 rounded-full"><option value="৬৪ জেলা" selected>৬৪ জেলা 120৳</option><option value="ঢাকা">ঢাকা 60৳</option><option value="পাবনা">পাবনা</option><option value="নড়াইল">নড়াইল</option><option value="চট্টগ্রাম">চট্টগ্রাম</option></select>
+<div class="flex items-center gap-2"><div class="bg-gradient-to-br from-black to-gray-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-black text-[16px]">AS</div><div><div class="font-black text-[18px] leading-none">ALL STYLE</div><div class="text-[10px] text-gray-500">36 ঘর • সব স্টাইল • ঢাকা টু ৬৪</div></div></div>
+<select id="district" onchange="render()" class="bg-black text-white text-xs font-bold px-3 py-2 rounded-full"><option value="৬৪ জেলা">৬৪ জেলা 120৳</option><option value="ঢাকা">ঢাকা 60৳</option><option value="পাবনা">পাবনা</option><option value="নড়াইল">নড়াইল</option></select>
 </div>
 
 <div class="flex gap-2 mt-3 overflow-x-auto no-scrollbar">
-<button onclick="setCat('all')" id="cat-all" class="cat-btn bg-black text-white px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">সব জুতা 👟</button>
-<button onclick="setCat('sneaker')" id="cat-sneaker" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">Sneaker</button>
-<button onclick="setCat('formal')" id="cat-formal" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">Formal</button>
-<button onclick="setCat('boot')" id="cat-boot" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">Boot</button>
-<button onclick="setCat('lofer')" id="cat-lofer" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">Loafer</button>
-<button onclick="setCat('sports')" id="cat-sports" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">Sports</button>
+<button onclick="setCat('all')" id="cat-all" class="cat-btn bg-black text-white px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">ALL STYLE 👟</button>
+<button onclick="setCat('sneaker')" id="cat-sneaker" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold">Sneaker</button>
+<button onclick="setCat('formal')" id="cat-formal" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold">Formal</button>
+<button onclick="setCat('casual')" id="cat-casual" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold">Casual</button>
+<button onclick="setCat('boot')" id="cat-boot" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold">Boot</button>
+<button onclick="setCat('sports')" id="cat-sports" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold">Sports</button>
+<button onclick="setCat('lofer')" id="cat-lofer" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold">Loafer</button>
 </div>
 
 <div class="flex gap-2 mt-3">
-<input id="search" oninput="render()" placeholder="জুতা খুঁজুন... Nike, Bata..." class="flex-1 bg-gray-100 rounded-full px-4 py-3 text-sm">
+<input id="search" oninput="render()" placeholder="ALL STYLE থেকে খুঁজুন..." class="flex-1 bg-gray-100 rounded-full px-4 py-3 text-sm">
 <button onclick="openModal()" class="bg-black text-white px-5 rounded-full font-bold text-xs">+ বেচুন</button>
 </div>
 
 <div class="flex gap-2 mt-3 overflow-x-auto no-scrollbar text-[11px] font-bold">
-<button onclick="setSize('all')" class="size-btn bg-black text-white px-3 py-1 rounded-full">সব সাইজ</button>
-<button onclick="setSize('39')" class="size-btn bg-gray-100 px-3 py-1 rounded-full">39</button>
-<button onclick="setSize('40')" class="size-btn bg-gray-100 px-3 py-1 rounded-full">40</button>
-<button onclick="setSize('41')" class="size-btn bg-gray-100 px-3 py-1 rounded-full">41</button>
-<button onclick="setSize('42')" class="size-btn bg-gray-100 px-3 py-1 rounded-full">42</button>
-<button onclick="setSize('43')" class="size-btn bg-gray-100 px-3 py-1 rounded-full">43</button>
-<button onclick="setSize('44')" class="size-btn bg-gray-100 px-3 py-1 rounded-full">44</button>
+<button onclick="setSize('all')" class="size-btn bg-black text-white px-3 py-1.5 rounded-full">সব সাইজ</button>
+<button onclick="setSize('39')" class="size-btn bg-gray-100 px-3 py-1.5 rounded-full">39</button>
+<button onclick="setSize('40')" class="size-btn bg-gray-100 px-3 py-1.5 rounded-full">40</button>
+<button onclick="setSize('41')" class="size-btn bg-gray-100 px-3 py-1.5 rounded-full">41</button>
+<button onclick="setSize('42')" class="size-btn bg-gray-100 px-3 py-1.5 rounded-full">42</button>
+<button onclick="setSize('43')" class="size-btn bg-gray-100 px-3 py-1.5 rounded-full">43</button>
+<button onclick="setSize('44')" class="size-btn bg-gray-100 px-3 py-1.5 rounded-full">44</button>
 </div>
 </div>
 
-<div class="px-3 py-2 flex justify-between items-center bg-yellow-50"><span class="text-xs font-bold">👟 হোম - সব জুতা দেখাচ্ছে</span><span class="text-[11px] bg-black text-white px-3 py-1 rounded-full"><span id="totalCount">0</span>/100 ঘর</span></div>
+<div class="px-3 py-2 flex justify-between items-center bg-gradient-to-r from-yellow-400 to-orange-400">
+<span class="text-xs font-black">👟 ALL STYLE - 36 ঘর</span>
+<span class="text-[11px] bg-black text-white px-3 py-1 rounded-full font-bold"><span id="totalCount">0</span>/36</span>
+</div>
 
 <div id="grid" class="grid grid-cols-2 gap-3 p-3"></div>
 
-<!-- SHOE MODAL - 100 GHOR -->
+<!-- ALL STYLE MODAL -->
 <div id="modal" class="hidden fixed inset-0 bg-black/90 z-[1000] flex items-center justify-center p-3 overflow-y-auto"><div class="bg-white w-full rounded-3xl p-5 my-5 max-h-[90vh] overflow-y-auto">
-<h2 class="font-black text-lg">👟 ONLY SHOE - 100 ঘর Upload</h2>
+<h2 class="font-black text-lg">👟 ALL STYLE - 36 ঘর Upload</h2>
+<p class="text-[11px] text-gray-500">সব স্টাইল - Formal থেকে Sports সব</p>
 
-<input id="pName" placeholder="জুতার নাম: Nike Air Jordan 1" class="w-full mt-3 bg-gray-100 p-3 rounded-xl text-sm font-bold">
+<input id="pName" placeholder="জুতার নাম: All Style Sneaker" class="w-full mt-3 bg-gray-100 p-3 rounded-xl text-sm font-bold border">
 <div class="grid grid-cols-2 gap-2 mt-2">
-<input id="pPrice" type="number" placeholder="দাম: 3500" class="bg-gray-100 p-3 rounded-xl text-sm">
-<select id="pSize" class="bg-gray-100 p-3 rounded-xl text-sm"><option value="40">Size 40</option><option value="41">Size 41</option><option value="42">Size 42</option><option value="43">Size 43</option><option value="44">Size 44</option><option value="39">Size 39</option><option value="38">Size 38</option></select>
+<input id="pPrice" type="number" placeholder="দাম: 3500" class="bg-gray-100 p-3 rounded-xl text-sm border">
+<select id="pSize" class="bg-gray-100 p-3 rounded-xl text-sm border"><option value="40">Size 40</option><option value="41">Size 41</option><option value="42" selected>Size 42</option><option value="43">Size 43</option><option value="44">Size 44</option><option value="39">Size 39</option></select>
 </div>
 <div class="grid grid-cols-2 gap-2 mt-2">
-<select id="pCat" class="bg-gray-100 p-3 rounded-xl text-sm"><option value="sneaker">Sneaker</option><option value="formal">Formal</option><option value="boot">Boot</option><option value="lofer">Loafer</option><option value="sports">Sports</option></select>
-<input id="pBrand" placeholder="Brand: Nike/Bata/Apex" class="bg-gray-100 p-3 rounded-xl text-sm">
+<select id="pCat" class="bg-gray-100 p-3 rounded-xl text-sm border"><option value="sneaker">Sneaker</option><option value="formal">Formal - Office</option><option value="casual">Casual - Daily</option><option value="boot">Boot - Winter</option><option value="sports">Sports - Running</option><option value="lofer">Loafer - Style</option></select>
+<input id="pBrand" placeholder="Brand: Nike/Apex/All Style" class="bg-gray-100 p-3 rounded-xl text-sm border">
 </div>
 
-<div class="mt-3"><label class="text-xs font-bold">📸 জুতার ছবি - 100টা পর্যন্ত (4 Angle Must):</label>
+<div class="mt-3"><label class="text-xs font-bold">📸 ALL STYLE ছবি - 10টা পর্যন্ত:</label>
 <input type="file" id="pFiles" accept="image/*" multiple class="w-full mt-1 bg-yellow-50 border-2 border-dashed border-black p-3 rounded-xl text-sm">
-<div id="countTxt" class="text-[11px] font-bold mt-1">0/100 ঘর</div>
-<div id="preview" class="grid grid-cols-4 gap-2 mt-2 max-h-[200px] overflow-y-auto bg-gray-50 p-2 rounded-xl"></div>
-<div class="text-[10px] text-gray-500">* সামনে, পিছে, সাইড, সোল - 4টা ছবি দিলে বেশি বিক্রি হবে</div>
+<div class="flex justify-between mt-1"><span id="countTxt" class="text-[11px] font-bold">0 ছবি</span><button onclick="clearImages()" class="text-[11px] text-red-600 font-bold">Clear</button></div>
+<div id="preview" class="grid grid-cols-4 gap-2 mt-2 max-h-[150px] overflow-y-auto bg-gray-50 p-2 rounded-xl border"></div>
 </div>
 
-<div class="flex gap-2 mt-4"><button onclick="closeModal()" class="flex-1 bg-gray-200 p-3 rounded-xl font-bold">বাতিল</button><button id="postBtn" onclick="saveShoe()" class="flex-1 bg-black text-white p-3 rounded-xl font-bold">জুতা পোস্ট করুন</button></div>
+<div class="flex gap-2 mt-4"><button onclick="closeModal()" class="flex-1 bg-gray-200 p-3 rounded-xl font-bold">বাতিল</button><button id="postBtn" onclick="saveShoe()" class="flex-1 bg-black text-white p-3 rounded-xl font-bold">ALL STYLE পোস্ট করুন</button></div>
 </div></div>
 
-<div id="viewModal" class="hidden fixed inset-0 bg-white z-[2000] flex flex-col"><div class="flex justify-between p-4 bg-black text-white"><b id="viewName"></b><button onclick="closeView()" class="text-3xl">×</button></div><div id="viewImages" class="flex-1 overflow-y-auto p-3 flex flex-col gap-3"></div><div class="p-4 border-t rounded-t-3xl bg-white"><div class="flex justify-between"><div id="viewPrice" class="font-black text-2xl"></div><div id="viewSize" class="bg-black text-white px-3 py-1 rounded-full text-xs font-bold h-fit"></div></div><div id="viewBrand" class="text-xs text-gray-500 mt-1"></div><div class="grid grid-cols-2 gap-2 mt-4"><a id="waBtn" href="#" target="_blank" class="bg-green-600 text-white p-3 rounded-full font-bold text-center text-sm"><i class="fab fa-whatsapp"></i> WhatsApp এ নিন</a><a href="tel:01908202027" class="bg-black text-white p-3 rounded-full font-bold text-center text-sm"><i class="fa fa-phone"></i> কল করুন</a></div><div class="text-[11px] text-center mt-2 text-gray-500">ঢাকা টু ৬৪ জেলা • 60-120৳ ডেলিভারি</div></div></div>
+<div id="viewModal" class="hidden fixed inset-0 bg-white z-[2000] flex flex-col"><div class="flex justify-between p-4 bg-black text-white"><div><b id="viewName"></b><div id="viewBrand2" class="text-[11px] text-gray-300"></div></div><button onclick="closeView()" class="text-3xl">×</button></div><div id="viewImages" class="flex-1 overflow-y-auto p-3 flex flex-col gap-3"></div><div class="p-4 border-t bg-white rounded-t-3xl"><div class="flex justify-between items-center"><div id="viewPrice" class="font-black text-2xl"></div><div id="viewSize" class="bg-black text-white px-4 py-2 rounded-full text-sm font-bold"></div></div><div class="grid grid-cols-2 gap-2 mt-4"><a id="waBtn" href="#" target="_blank" class="bg-green-600 text-white p-3 rounded-full font-bold text-center text-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="tel:01908202027" class="bg-black text-white p-3 rounded-full font-bold text-center text-sm"><i class="fa fa-phone"></i> কল</a></div><div class="text-[11px] text-center mt-2 text-gray-500">ALL STYLE • 36 ঘর • ঢাকা টু ৬৪ • 60-120৳</div></div></div>
 
-<div class="fixed bottom-0 w-full max-w-[500px] bg-white border-t flex justify-around p-3 text-[10px] font-bold z-[999]"><button onclick="setCat('all')" class="flex flex-col items-center"><i class="fa fa-home text-lg"></i>সব জুতা</button><button onclick="openModal()" class="bg-black text-white px-6 py-2 rounded-full">+ জুতা বেচুন</button><a href="https://wa.me/8801908202027?text=ভাই ONLY SHOE থেকে জুতা নিতে চাই - sobmistri.vercel.app" target="_blank" class="flex flex-col items-center text-green-600"><i class="fab fa-whatsapp text-[22px]"></i>WhatsApp</a><a href="tel:01908202027" class="flex flex-col items-center"><i class="fa fa-phone text-lg"></i>কল</a></div>
+<div class="fixed bottom-0 w-full max-w-[500px] bg-white border-t flex justify-around p-3 text-[10px] font-bold z-[999]"><button onclick="setCat('all')" class="flex flex-col items-center"><i class="fa fa-home text-lg"></i>ALL STYLE</button><button onclick="openModal()" class="bg-black text-white px-6 py-2 rounded-full">+ জুতা</button><a href="https://wa.me/8801908202027?text=ভাই ALL STYLE 36 ঘর থেকে জুতা নিতে চাই" target="_blank" class="flex flex-col items-center text-green-600"><i class="fab fa-whatsapp text-[22px]"></i>WhatsApp</a><a href="tel:01908202027" class="flex flex-col items-center"><i class="fa fa-phone text-lg"></i>কল</a></div>
 
 </div>
 <script>
-let products = JSON.parse(localStorage.getItem('ONLY_SHOE_100')||'[]');
+let products = JSON.parse(localStorage.getItem('ALLSTYLE_36')||'[]');
 let curCat='all', curSize='all';
 if(products.length===0){
 products=[
-{id:1,name:'Nike Air Jordan 1 High',price:4200,size:'42',cat:'sneaker',brand:'Nike',images:['https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400','https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400']},
-{id:2,name:'Bata Formal Office Shoe',price:2800,size:'41',cat:'formal',brand:'Bata',images:['https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=400']},
-{id:3,name:'Timberland Boot - 100% Leather',price:5500,size:'43',cat:'boot',brand:'Timberland',images:['https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=400']},
-{id:4,name:'Apex Loafer - Brown',price:3200,size:'40',cat:'lofer',brand:'Apex',images:['https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=400']},
-]; localStorage.setItem('ONLY_SHOE_100', JSON.stringify(products));
+{id:1,name:'All Style Sneaker - White',price:3500,size:'42',cat:'sneaker',brand:'All Style',images:['https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400','https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400']},
+{id:2,name:'All Style Formal - Black Office',price:3200,size:'41',cat:'formal',brand:'All Style',images:['https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=400']},
+{id:3,name:'All Style Casual - Daily Use',price:2800,size:'40',cat:'casual',brand:'All Style',images:['https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=400']},
+{id:4,name:'All Style Boot - Winter',price:4800,size:'43',cat:'boot',brand:'All Style',images:['https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=400']},
+{id:5,name:'All Style Sports - Running',price:3600,size:'42',cat:'sports',brand:'All Style',images:['https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400']},
+{id:6,name:'All Style Loafer - Brown',price:3400,size:'40',cat:'lofer',brand:'All Style',images:['https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=400']},
+]; localStorage.setItem('ALLSTYLE_36', JSON.stringify(products));
 }
 let selectedImages=[];
 document.getElementById('pFiles').addEventListener('change', function(e){
- selectedImages=[]; document.getElementById('preview').innerHTML=''; let files=e.target.files; if(files.length>100) files=Array.from(files).slice(0,100);
- document.getElementById('countTxt').innerText=files.length+'/100'; document.getElementById('postBtn').innerText='লোড হচ্ছে...'; document.getElementById('postBtn').disabled=true; let loaded=0;
- for(let i=0;i<files.length;i++){ let r=new FileReader(); r.onload=function(ev){ selectedImages.push(ev.target.result); let d=document.createElement('div'); d.innerHTML=`<img src="${ev.target.result}" class="w-full h-16 rounded-lg object-cover border">`; document.getElementById('preview').appendChild(d); loaded++; if(loaded===files.length){ document.getElementById('postBtn').innerText='✅ জুতা পোস্ট করুন ('+loaded+')'; document.getElementById('postBtn').disabled=false; } }; r.readAsDataURL(files[i]); }
+ selectedImages=[]; document.getElementById('preview').innerHTML=''; let files=e.target.files; if(files.length>10) files=Array.from(files).slice(0,10);
+ document.getElementById('countTxt').innerText=files.length+' ছবি'; document.getElementById('postBtn').innerText='লোড হচ্ছে...'; document.getElementById('postBtn').disabled=true; let loaded=0;
+ for(let i=0;i<files.length;i++){ let r=new FileReader(); r.onload=function(ev){ selectedImages.push(ev.target.result); let d=document.createElement('div'); d.innerHTML=`<img src="${ev.target.result}" class="w-full h-16 rounded-lg object-cover border-2 border-black">`; document.getElementById('preview').appendChild(d); loaded++; if(loaded===files.length){ document.getElementById('postBtn').innerText='✅ ALL STYLE পোস্ট ('+loaded+')'; document.getElementById('postBtn').disabled=false; } }; r.readAsDataURL(files[i]); }
 });
+function clearImages(){ selectedImages=[]; document.getElementById('preview').innerHTML=''; document.getElementById('pFiles').value=''; document.getElementById('countTxt').innerText='0 ছবি'; }
 function setCat(c){ curCat=c; document.querySelectorAll('.cat-btn').forEach(b=>b.className='cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap'); document.getElementById('cat-'+c).className='cat-btn bg-black text-white px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap'; render(); }
-function setSize(s){ curSize=s; document.querySelectorAll('.size-btn').forEach(b=>b.className='size-btn bg-gray-100 px-3 py-1 rounded-full'); event.target.className='size-btn bg-black text-white px-3 py-1 rounded-full'; if(s==='all') curSize='all'; else curSize=s; render(); }
-function openModal(){document.getElementById('modal').classList.remove('hidden');}
+function setSize(s){ curSize=s; document.querySelectorAll('.size-btn').forEach(b=>{ b.className='size-btn bg-gray-100 px-3 py-1.5 rounded-full'; }); if(event) event.target.className='size-btn bg-black text-white px-3 py-1.5 rounded-full'; render(); }
+function openModal(){ if(products.length>=36) alert('⚠️ 36 ঘর Full! পুরাতন 1টা Delete হবে'); document.getElementById('modal').classList.remove('hidden'); }
 function closeModal(){document.getElementById('modal').classList.add('hidden');}
 function saveShoe(){
- let name=document.getElementById('pName').value; let price=document.getElementById('pPrice').value; let size=document.getElementById('pSize').value; let cat=document.getElementById('pCat').value; let brand=document.getElementById('pBrand').value; if(!name||!price) return alert('নাম ও দাম দিন');
+ let name=document.getElementById('pName').value; let price=document.getElementById('pPrice').value; let size=document.getElementById('pSize').value; let cat=document.getElementById('pCat').value; let brand=document.getElementById('pBrand').value||'All Style'; if(!name||!price) return alert('নাম ও দাম দিন');
  if(selectedImages.length===0 && document.getElementById('pFiles').files.length>0) return alert('ছবি লোড হচ্ছে...');
- products.unshift({id:Date.now(),name:name,price:parseInt(price),size:size,cat:cat,brand:brand||'No Brand',images:selectedImages.length>0?[...selectedImages]:['https://via.placeholder.com/400?text='+encodeURIComponent(name)]});
- if(products.length>100) products=products.slice(0,100);
- localStorage.setItem('ONLY_SHOE_100', JSON.stringify(products)); closeModal(); document.getElementById('pName').value=''; document.getElementById('pPrice').value=''; document.getElementById('pBrand').value=''; document.getElementById('pFiles').value=''; selectedImages=[]; document.getElementById('preview').innerHTML=''; render(); alert('✅ জুতা হোম পেজে চলে গেছে!');
+ products.unshift({id:Date.now(),name:name,price:parseInt(price),size:size,cat:cat,brand:brand,images:selectedImages.length>0?[...selectedImages]:['https://via.placeholder.com/400?text='+encodeURIComponent(name)]});
+ if(products.length>36) products=products.slice(0,36);
+ localStorage.setItem('ALLSTYLE_36', JSON.stringify(products)); closeModal(); document.getElementById('pName').value=''; document.getElementById('pPrice').value=''; document.getElementById('pBrand').value=''; document.getElementById('pFiles').value=''; selectedImages=[]; document.getElementById('preview').innerHTML=''; render(); alert('✅ ALL STYLE '+products.length+'/36 - Add হয়েছে!');
 }
 function render(){
  let q=document.getElementById('search').value.toLowerCase(); let dist=document.getElementById('district').value; let grid=document.getElementById('grid'); grid.innerHTML='';
- let filtered=products.filter(p=>{
-  let catOk=curCat==='all'||p.cat===curCat;
-  let sizeOk=curSize==='all'||p.size===curSize;
-  let searchOk=p.name.toLowerCase().includes(q)||p.brand.toLowerCase().includes(q);
-  return catOk&&sizeOk&&searchOk;
- });
+ let filtered=products.filter(p=>{ let catOk=curCat==='all'||p.cat===curCat; let sizeOk=curSize==='all'||p.size===curSize; let searchOk=p.name.toLowerCase().includes(q)||p.brand.toLowerCase().includes(q); return catOk&&sizeOk&&searchOk; });
  document.getElementById('totalCount').innerText=filtered.length;
- if(filtered.length===0){ grid.innerHTML='<div class="col-span-2 text-center py-20 text-gray-400">এই সাইজ/ক্যাটাগরিতে জুতা নেই</div>'; return; }
+ if(filtered.length===0){ grid.innerHTML='<div class="col-span-2 text-center py-20 text-gray-400">এই ক্যাটাগরিতে জুতা নেই - ALL STYLE অন্য ঘরে আছে</div>'; return; }
  filtered.forEach((p,idx)=>{
-  let label=dist==='৬৪ জেলা'?'ঢাকা টু ৬৪':`ঢাকা → ${dist}`;
-  let wa=`https://wa.me/8801908202027?text=👟 ${encodeURIComponent(p.name)} Size ${p.size} - ৳${p.price} - ${dist} - sobmistri.vercel.app`;
+  let wa=`https://wa.me/8801908202027?text=👟 ALL STYLE ঘর ${idx+1}/36: ${encodeURIComponent(p.name)} Size ${p.size} - ৳${p.price} - ${dist}`;
   let div=document.createElement('div'); div.className='bg-white rounded-[24px] overflow-hidden border shadow-sm';
-  div.innerHTML=`<div class="relative cursor-pointer" onclick="openView(${p.id})"><div class="absolute top-2 left-2 bg-black text-white text-[9px] px-2 py-1 rounded-full font-black">ঘর ${idx+1}</div><img src="${p.images[0]}" class="w-full h-[180px] object-cover"><div class="absolute top-2 right-2 bg-white text-black text-[10px] px-2 py-1 rounded-full font-bold">Size ${p.size}</div><div class="absolute bottom-2 left-2 bg-yellow-400 text-black text-[9px] px-2 py-1 rounded-full font-bold">${p.brand}</div><div class="absolute bottom-2 right-2 bg-white/90 text-black text-[9px] px-2 py-1 rounded-full font-bold">📸 ${p.images.length}</div></div><div class="p-3"><div class="text-[13px] font-bold truncate">${p.name}</div><div class="flex justify-between items-center mt-1"><div class="text-black font-black">৳${p.price.toLocaleString('bn-BD')}</div><div class="text-[10px] text-gray-500">${label}</div></div><div class="flex gap-2 mt-2"><a href="${wa}" target="_blank" class="flex-1 bg-black text-white text-xs font-bold py-2.5 rounded-full text-center">WhatsApp</a><a href="tel:01908202027" class="bg-green-600 text-white w-10 h-10 rounded-full flex items-center justify-center"><i class="fab fa-whatsapp text-sm"></i></a></div></div>`;
+  div.innerHTML=`<div class="relative cursor-pointer" onclick="openView(${p.id})"><div class="absolute top-2 left-2 bg-black text-white text-[10px] px-2.5 py-1 rounded-full font-black">ঘর ${idx+1}/36</div><img src="${p.images[0]}" class="w-full h-[190px] object-cover"><div class="absolute top-2 right-2 bg-white text-black text-[11px] px-2.5 py-1 rounded-full font-black border">Size ${p.size}</div><div class="absolute bottom-2 left-2 bg-yellow-400 text-black text-[10px] px-2 py-1 rounded-full font-black">${p.brand}</div><div class="absolute bottom-2 right-2 bg-black text-white text-[10px] px-2 py-1 rounded-full">📸 ${p.images.length}</div></div><div class="p-3"><div class="text-[13px] font-bold truncate">${p.name}</div><div class="flex justify-between mt-1"><div class="font-black text-[16px]">৳${p.price.toLocaleString('bn-BD')}</div><div class="text-[10px] text-gray-500">${dist==='৬৪ জেলা'?'ঢাকা টু ৬৪':'ঢাকা → '+dist}</div></div><div class="flex gap-2 mt-2"><a href="${wa}" target="_blank" class="flex-1 bg-black text-white text-xs font-bold py-2.5 rounded-full text-center">WhatsApp</a><a href="tel:01908202027" class="bg-yellow-400 text-black w-10 h-10 rounded-full flex items-center justify-center"><i class="fa fa-phone text-xs"></i></a></div></div>`;
   grid.appendChild(div);
  });
 }
-function openView(id){ let p=products.find(x=>x.id===id); let idx=products.findIndex(x=>x.id===id); document.getElementById('viewName').innerText=`${p.name} - Size ${p.size}`; document.getElementById('viewPrice').innerText='৳'+p.price.toLocaleString('bn-BD'); document.getElementById('viewSize').innerText='Size '+p.size; document.getElementById('viewBrand').innerText=p.brand+' • '+p.cat+' • ঘর '+(idx+1); let box=document.getElementById('viewImages'); box.innerHTML=''; p.images.forEach((img,i)=>{ let d=document.createElement('div'); d.innerHTML=`<div class="text-[11px] font-bold mb-1">${i+1}/${p.images.length} - ${p.name}</div><img src="${img}" class="w-full rounded-2xl">`; box.appendChild(d); }); let dist=document.getElementById('district').value; document.getElementById('waBtn').href=`https://wa.me/8801908202027?text=👟 ${encodeURIComponent(p.name)} Size ${p.size} Brand ${p.brand} - ৳${p.price} - ${dist} থেকে নিতে চাই%0A%0Aআমার সাইজ: ${p.size}%0Aঠিকানা: ${dist}`; document.getElementById('viewModal').classList.remove('hidden'); }
+function openView(id){ let p=products.find(x=>x.id===id); let idx=products.findIndex(x=>x.id===id); document.getElementById('viewName').innerText=`ঘর ${idx+1}/36 - ${p.name}`; document.getElementById('viewBrand2').innerText=`${p.brand} • ${p.cat} • Size ${p.size}`; document.getElementById('viewPrice').innerText='৳'+p.price.toLocaleString('bn-BD'); document.getElementById('viewSize').innerText='Size '+p.size; let box=document.getElementById('viewImages'); box.innerHTML=''; p.images.forEach((img,i)=>{ let d=document.createElement('div'); d.innerHTML=`<div class="text-[11px] font-black mb-1 bg-black text-white inline-block px-2 py-1 rounded-full">${i+1}/${p.images.length}</div><img src="${img}" class="w-full rounded-2xl">`; box.appendChild(d); }); let dist=document.getElementById('district').value; document.getElementById('waBtn').href=`https://wa.me/8801908202027?text=👟 ALL STYLE ঘর ${idx+1}/36: ${encodeURIComponent(p.name)} Size ${p.size} - ৳${p.price} - ${dist} থেকে নিতে চাই`; document.getElementById('viewModal').classList.remove('hidden'); }
 function closeView(){document.getElementById('viewModal').classList.add('hidden');}
 render();
 </script>
