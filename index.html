@@ -1,127 +1,105 @@
 "use client";
 import { useState } from "react";
 
-const products = [
-  { id:1, name:"Nike Air Style 36", price:1850, original:2650, rating:"4.8 (120)", tag:"-30%", img:"https://i.imgur.com/8Km9tLL.png" },
-  { id:2, name:"Adidas Classic Jogger", price:2200, original:3100, rating:"4.7 (95)", tag:"BESTSELLER", img:"https://i.imgur.com/8Km9tLL.png" },
-  { id:3, name:"Puma Sport Running", price:1990, original:2500, rating:"4.6 (78)", tag:"", img:"https://i.imgur.com/8Km9tLL.png" },
-  { id:4, name:"Leather Loafer Classic", price:1650, original:2000, rating:"4.9 (62)", tag:"HOT", img:"https://i.imgur.com/8Km9tLL.png" },
-  { id:5, name:"Canvas Sneaker Casual", price:1300, original:1650, rating:"4.5 (44)", tag:"", img:"https://i.imgur.com/8Km9tLL.png" },
-  { id:6, name:"Formal Oxford Leather", price:2350, original:3000, rating:"4.8 (51)", tag:"", img:"https://i.imgur.com/8Km9tLL.png" },
-];
+export default function Profile() {
+  const [activeCat, setActiveCat] = useState("Sneakers");
 
-export default function Home() {
-  const [view, setView] = useState("home");
-  const [category, setCategory] = useState("Sneakers");
-  const [pName, setPName] = useState("");
-  const [pDiscount, setPDiscount] = useState("");
-  const [pOriginal, setPOriginal] = useState("");
-  const [files, setFiles] = useState<File[]>([]);
+  const categories = [
+    { name:"Sneakers", icon:"👟" },
+    { name:"Formal", icon:"👞" },
+    { name:"Sports", icon:"🏃" },
+    { name:"Sandals", icon:"🩴" },
+  ];
 
-  const priceMap:any = {
-    Sneakers: { discount:1999, original:3200, name:"All Style Sneaker Premium" },
-    Formal: { discount:2999, original:4500, name:"Black Brogue Oxford Formal" },
-    Sports: { discount:2500, original:3800, name:"Premium Running Shoe" },
-    Sandals: { discount:1650, original:2000, name:"Leather Loafer Classic" },
-  };
-
-  const handleFile = (e:any) => {
-    const f = Array.from(e.target.files) as File[];
-    setFiles(f);
-    const data = priceMap[category] || priceMap.Sneakers;
-    if(!pName) setPName(data.name);
-    setPDiscount(data.discount.toString());
-    setPOriginal(data.original.toString()); // Original Market Price অটো বসবে
-  };
+  const shoes = [
+    { id:1, name:"Nike Air Style 36", price:1850, original:2650, rating:"4.8", count:120, tag:"-30%", color:"bg-red-500" },
+    { id:2, name:"Adidas Classic Jogger", price:2200, original:3100, rating:"4.7", count:95, tag:"BESTSELLER", color:"bg-green-500" },
+    { id:3, name:"Puma Sport Running", price:1990, original:2500, rating:"4.6", count:78, tag:"", oldPrice:2650, color:"" },
+    { id:4, name:"Leather Loafer Classic", price:1650, original:2000, rating:"4.9", count:62, tag:"HOT", color:"bg-orange-500" },
+    { id:5, name:"Canvas Sneaker Casual", price:1300, original:1650, rating:"4.5", count:44, tag:"", oldPrice:2650, color:"" },
+    { id:6, name:"Formal Oxford Leather", price:2350, original:3000, rating:"4.8", count:51, tag:"", color:"" },
+  ];
 
   return (
-    <div className="min-h-screen bg-[#f5f5f7] max-w-[430px] mx-auto relative pb-[80px]">
-      {/* HEADER - ALL STYLE 36 Ghor */}
-      {view==="home" && (
-      <>
-      <div className="bg-black text-white px-5 pt-8 pb-6 rounded-b-[24px]">
+    <div className="bg-[#f2f2f5] min-h-screen max-w-[430px] mx-auto relative pb-24 font-sans">
+      {/* TOP BLACK PROFILE HEADER */}
+      <div className="bg-black text-white px-5 pt-12 pb-8 rounded-b-[28px]">
+        <div className="flex justify-between items-start">
+          <h1 className="text-[34px] font-black leading-[0.85] tracking-tight">ALL STYLE<br/>36 Ghor</h1>
+          <div className="flex gap-5 mt-2 text-[22px]">
+            <span>⌕</span>
+            <span>♡</span>
+            <div className="relative"><span>🛒</span><span className="absolute -top-2 -right-2 bg-red-500 text-[10px] w-5 h-5 rounded-full flex items-center justify-center">2</span></div>
+          </div>
+        </div>
+      </div>
+
+      {/* TRUSTED BADGE */}
+      <div className="mx-4 -mt-4 bg-white rounded-xl px-3 py-2.5 flex items-center gap-2 shadow-sm border border-gray-100">
+        <span className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">✓</span>
+        <p className="text-[13px] font-bold">বাংলাদেশের বিশ্বস্ত জুতার শপ • COD Available • 100% Original</p>
+      </div>
+
+      {/* NEW COLLECTION BANNER */}
+      <div className="mx-4 mt-3 bg-gradient-to-r from-[#b8d8e8] to-[#7ab5d6] rounded-2xl p-4 flex justify-between items-center h-[95px]">
+        <div>
+          <h2 className="font-black text-[22px] leading-none">NEW COLLECTION 2025</h2>
+          <p className="text-[13px] mt-1 font-medium">Up to 30% OFF on All Shoes</p>
+        </div>
+        <div className="relative">
+          <img src="https://i.ibb.co/Q8x5tLz/sneaker.png" className="w-[110px] -mt-2" alt="shoe" />
+          <button className="bg-black text-white text-[12px] px-3 py-1.5 rounded-full font-bold absolute -bottom-1 right-0">Shop Now →</button>
+        </div>
+      </div>
+
+      {/* SHOP BY CATEGORY */}
+      <div className="px-4 mt-6">
         <div className="flex justify-between items-center">
-          <h1 className="text-[32px] font-black leading-[0.9]">ALL STYLE<br/>36 Ghor</h1>
-          <div className="flex gap-4 text-xl"><span>🔍</span><span>🤍</span><span>🛒<sup className="bg-red-500 text-[10px] px-1 rounded-full">2</sup></span></div>
+          <h3 className="font-bold text-[18px]">Shop by Category</h3>
+          <span className="text-[14px] text-gray-500">See All</span>
+        </div>
+        <div className="flex gap-2 mt-3 overflow-x-auto scrollbar-hide">
+          {categories.map(cat=>(
+            <button key={cat.name} onClick={()=>setActiveCat(cat.name)}
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-[13px] font-bold whitespace-nowrap border ${activeCat===cat.name? "bg-black text-white border-black" : "bg-[#e9e9eb] text-black border-transparent"}`}>
+              <span>{cat.icon}</span> {cat.name}
+            </button>
+          ))}
         </div>
       </div>
 
-      <div className="px-4 -mt-4">
-        <div className="bg-white rounded-[16px] px-3 py-2 text-[13px] flex items-center gap-2 shadow-sm">
-          <span className="bg-green-500 text-white rounded-full w-5 h-5 flex items-center justify-center">✓</span>
-          <span className="font-bold">বাংলাদেশের বিশ্বস্ত জুতার শপ • COD Available • 100% Original</span>
+      {/* TRENDING SHOES */}
+      <div className="px-4 mt-7">
+        <div className="flex justify-between items-center">
+          <h3 className="font-bold text-[20px]">Trending Shoes for You</h3>
+          <span className="text-[13px] text-gray-500">126 Items</span>
         </div>
 
-        {/* BANNER */}
-        <div className="bg-[#a9d6e5] mt-3 rounded-[16px] p-4 flex justify-between items-center">
-          <div><h2 className="font-black text-[22px] leading-tight">NEW COLLECTION 2025</h2><p className="text-[14px]">Up to 30% OFF on All Shoes</p></div>
-          <div className="text-right"><img src="https://i.imgur.com/8Km9tLL.png" className="w-24" /><button className="bg-black text-white text-xs px-3 py-1 rounded-full mt-1">Shop Now →</button></div>
-        </div>
-
-        {/* CATEGORY */}
-        <div className="mt-5">
-          <div className="flex justify-between"><h3 className="font-bold text-lg">Shop by Category</h3><span className="text-sm">See All</span></div>
-          <div className="flex gap-2 mt-3 overflow-x-auto">
-            {["Sneakers","Formal","Sports","Sandals"].map(cat=>(
-              <button key={cat} onClick={()=>setCategory(cat)} className={`px-4 py-2 rounded-xl text-sm font-bold whitespace-nowrap flex items-center gap-2 ${category===cat?"bg-black text-white":"bg-[#e9e9eb]"}`}>👟 {cat}</button>
-            ))}
-          </div>
-        </div>
-
-        {/* PRODUCTS */}
-        <div className="mt-6">
-          <div className="flex justify-between"><h3 className="font-bold text-xl">Trending Shoes for You</h3><span className="text-sm text-gray-500">126 Items</span></div>
-          <div className="grid grid-cols-2 gap-3 mt-3">
-            {products.map(p=>(
-              <div key={p.id} className="bg-white rounded-xl p-3 shadow-sm relative">
-                {p.tag && <span className={`absolute top-2 left-2 text-[10px] px-2 py-1 rounded text-white font-bold ${p.tag==="-30%"?"bg-red-500":p.tag==="BESTSELLER"?"bg-green-500":"bg-orange-500"}`}>{p.tag}</span>}
-                <img src={p.img} className="w-full h-24 object-contain" />
-                <p className="text-[13px] font-bold mt-2 text-center">{p.name}</p>
-                <p className="text-center text-xs text-gray-500">{p.rating.replace("(","★ (")}</p>
-                <p className="text-center font-black">৳{p.price.toLocaleString()} <span className="text-[11px] line-through font-normal">৳{p.original.toLocaleString()}</span></p>
+        <div className="grid grid-cols-2 gap-3 mt-4">
+          {shoes.map(shoe=>(
+            <div key={shoe.id} className="bg-white rounded-2xl p-2.5 shadow-[0_2px_10px_rgba(0,0,0,0.05)] relative">
+              {shoe.tag && <span className={`absolute top-2.5 left-2.5 text-[10px] font-black px-2 py-1 rounded text-white ${shoe.color}`}>{shoe.tag}</span>}
+              <img src={`https://via.placeholder.com/200x120/f8f8f8/111?text=Shoe`} className="w-full h-[90px] object-contain mt-2" />
+              <div className="text-center mt-2">
+                <p className="text-[13px] font-bold leading-tight">{shoe.name}</p>
+                <p className="text-[12px] text-gray-500 mt-1">{shoe.rating} <span className="text-yellow-500">★</span> ({shoe.count})</p>
+                <div className="mt-1">
+                  {shoe.oldPrice && <span className="text-[11px] line-through text-gray-400 mr-1">৳{shoe.oldPrice.toLocaleString()}</span>}
+                  <span className="font-black text-[15px]">৳{shoe.price.toLocaleString()}</span>
+                  <span className="text-[11px] line-through text-gray-400 ml-1">৳{shoe.original.toLocaleString()}</span>
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
-      </>
-      )}
 
-      {/* ADD JUTA VIEW - Choose Files = Auto Fill */}
-      {view==="add" && (
-        <div className="p-4">
-          <div className="bg-white rounded-[20px] p-4 shadow">
-            <h2 className="font-black text-xl">ONLY FOR SHOE ALL STYLE - 36 ঘর</h2>
-            <label className="text-sm mt-3 block">নাম:</label>
-            <input value={pName} onChange={e=>setPName(e.target.value)} placeholder="All Style Sneaker" className="w-full bg-[#f1f3f5] p-3 rounded-xl mt-1" />
-            <div className="grid grid-cols-2 gap-2 mt-3">
-              <div><label className="text-sm">দাম (Discount):</label><input value={pDiscount} onChange={e=>setPDiscount(e.target.value)} placeholder="2999" className="w-full bg-[#f1f3f5] p-3 rounded-xl mt-1" /></div>
-              <div><label className="text-sm">Original Market Price (অটো):</label><input value={pOriginal} placeholder="4500" className="w-full bg-[#f1f3f5] p-3 rounded-xl mt-1 border-2 border-green-300" /></div>
-            </div>
-            <div className="grid grid-cols-2 gap-2 mt-3">
-              <select value={category} onChange={e=>setCategory(e.target.value)} className="bg-[#f1f3f5] p-3 rounded-xl"><option>Sneakers</option><option>Formal</option><option>Sports</option><option>Sandals</option></select>
-              <select className="bg-[#f1f3f5] p-3 rounded-xl"><option>All Style</option></select>
-            </div>
-            <div className="border-2 border-dashed border-black rounded-xl p-4 mt-4 text-center">
-              <input type="file" multiple onChange={handleFile} className="w-full" />
-              <p className="text-xs mt-2">Choose Files দিলেই বাকি সব অটো বসে যাবে</p>
-            </div>
-            <div className="flex gap-2 mt-2 flex-wrap">{files.map((f,i)=><span key={i} className="text-xs bg-black text-white px-2 py-1 rounded">{f.name}</span>)}</div>
-            {pOriginal && <div className="bg-green-100 text-green-800 p-2 rounded-xl mt-3 text-sm">✨ অটো বসেছে! Original ৳{pOriginal} → Discount ৳{pDiscount} = Save ৳{Number(pOriginal)-Number(pDiscount)}</div>}
-            <div className="grid grid-cols-2 gap-2 mt-4">
-              <button onClick={()=>setView("home")} className="bg-[#e9ecef] py-3 rounded-xl font-bold">বাতিল</button>
-              <button className="bg-black text-white py-3 rounded-xl font-bold">✅ পোস্ট ({files.length})</button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* BOTTOM NAV - Home Page Koi Fix */}
-      <div className="fixed bottom-0 max-w-[430px] w-full bg-black text-white flex justify-around py-3 rounded-t-[20px]">
-        <button onClick={()=>setView("home")} className={`flex flex-col items-center ${view==="home"?"text-white":"text-gray-400"}`}>🏠<span className="text-[11px]">Home</span></button>
-        <button onClick={()=>setView("add")} className={`flex flex-col items-center ${view==="add"?"text-white":"text-gray-400"}`}><span className="bg-white text-black w-8 h-8 rounded-full flex items-center justify-center">+</span><span className="text-[11px]">Add Juta</span></button>
-        <button className="flex flex-col items-center text-gray-400">📋<span className="text-[11px]">Orders</span></button>
-        <button className="flex flex-col items-center text-gray-400">💬<span className="text-[11px]">WhatsApp</span></button>
+      {/* BOTTOM NAV - HOME PAGE KOI FIX */}
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 max-w-[430px] w-full bg-black text-white flex justify-around items-center py-3 px-2 rounded-t-[24px]">
+        <button className="flex flex-col items-center text-white"><span className="text-[22px]">⌂</span><span className="text-[10px] mt-1 font-bold">Home</span><div className="w-6 h-1 bg-white rounded-full mt-1"></div></button>
+        <button className="flex flex-col items-center text-gray-400"><span className="text-[20px]">🛒+</span><span className="text-[10px] mt-1">Add Juta</span></button>
+        <button className="flex flex-col items-center text-gray-400"><span className="text-[20px]">📋</span><span className="text-[10px] mt-1">Orders</span></button>
+        <button className="flex flex-col items-center text-gray-400"><span className="text-[20px]">🟢</span><span className="text-[10px] mt-1">WhatsApp</span></button>
       </div>
     </div>
   );
