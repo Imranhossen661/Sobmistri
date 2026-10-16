@@ -1,38 +1,139 @@
-<!DOCTYPE html><html lang="bn"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SobSob</title><script src="https://cdn.tailwindcss.com"></script></head>
-<body class="bg-gray-100">
-<div class="max-w-md mx-auto bg-white min-h-screen">
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SobSob - 64 Zila Super App - Poripurno</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-[#f0f2f5]">
+<div class="max-w-[500px] mx-auto bg-white min-h-screen shadow-xl pb-20">
 
-<div class="bg-purple-700 text-white p-4 text-center">
-<b>SobSob - 7 in 1</b><br><small>Rocket: 01908202027</small>
-<select id="zila" class="w-full mt-2 p-2 rounded text-black"><option>পাবনা</option><option>ঢাকা</option><option>নড়াইল</option><option>নারায়ণগঞ্জ</option><option>৬৪ জেলা</option></select>
+<!-- 1. HEADER + LOGIN -->
+<div class="bg-[#1877f2] text-white p-3 sticky top-0 z-[100] flex justify-between items-center">
+<b class="text-xl">SobSob</b>
+<div class="flex gap-2 items-center">
+<select id="zila" class="text-black text-xs p-1 rounded"><option>পাবনা</option><option>ঢাকা</option><option>নড়াইল</option><option>নারায়ণগঞ্জ</option><option>খুলনা</option><option>৬৪ জেলা</option></select>
+<button id="userBtn" onclick="login()" class="bg-white text-blue-600 text-xs px-3 py-1 rounded-full font-bold">Login</button>
+</div>
 </div>
 
-<div class="grid grid-cols-4 gap-2 p-2">
-<button onclick="openTab('sell')" class="bg-purple-200 p-2 rounded text-xs font-bold">🛒 বেচা</button>
-<button onclick="openTab('mistri')" class="bg-blue-200 p-2 rounded text-xs font-bold">🔧 মিস্ত্রী</button>
-<button onclick="openTab('bari')" class="bg-green-200 p-2 rounded text-xs font-bold">🏠 বাড়ি</button>
-<button onclick="openTab('job')" class="bg-yellow-200 p-2 rounded text-xs font-bold">💼 চাকরি</button>
-<button onclick="openTab('food')" class="bg-red-200 p-2 rounded text-xs font-bold">🍔 খাবার</button>
-<button onclick="openTab('course')" class="bg-pink-200 p-2 rounded text-xs font-bold">🎓 কোর্স</button>
-<button onclick="openTab('daraz')" class="bg-orange-200 p-2 rounded text-xs font-bold">📦 Mall</button>
-<button onclick="openTab('add')" class="bg-black text-white p-2 rounded text-xs font-bold">＋ পোস্ট</button>
+<!-- 2. POST BOX -->
+<div class="p-3 bg-white border-b flex gap-2">
+<img id="myPic" src="https://via.placeholder.com/40" class="w-10 h-10 rounded-full">
+<div class="flex-1">
+<input id="postText" placeholder="কি ভাবছেন? বেচা-কেনা, মিস্ত্রী..." class="w-full bg-gray-100 rounded-full px-4 py-2 text-sm">
+<div class="flex gap-2 mt-2">
+<label class="bg-gray-100 px-3 py-1 rounded-full text-xs cursor-pointer"><i class="fa fa-image"></i> ছবি <input type="file" id="imgFile" hidden accept="image/*"></label>
+<select id="postCat" class="bg-gray-100 px-3 py-1 rounded-full text-xs"><option value="sell">🛒 বেচা-কেনা</option><option value="mistri">🔧 মিস্ত্রী</option><option value="bari">🏠 বাড়ি ভাড়া</option><option value="job">💼 চাকরি</option><option value="food">🍔 খাবার</option><option value="general">📝 সাধারণ</option></select>
+<button onclick="createPost()" class="bg-blue-600 text-white px-5 py-1 rounded-full text-xs font-bold">Post</button>
+</div>
+<div class="text-[10px] mt-1 text-gray-500">Rocket: 01908202027 এ 50৳ পাঠালে পোস্ট Boost হবে</div>
+</div>
 </div>
 
-<div id="sell" class="tab p-3"><div class="border p-3 rounded">iPhone - 45k <button onclick="pay()" class="bg-purple-600 text-white px-2 rounded text-xs">Buy</button></div></div>
-<div id="mistri" class="tab p-3 hidden"><div class="border p-3 rounded">ইলেকট্রিশিয়ান - 200৳ কমিশন <a href="tel:01908202027" class="bg-blue-600 text-white px-2 rounded text-xs">Call</a></div></div>
-<div id="bari" class="tab p-3 hidden"><div class="border p-3 rounded">ফ্ল্যাট ভাড়া - 4000৳ কমিশন</div></div>
-<div id="job" class="tab p-3 hidden"><div class="border p-3 rounded">চাকরি - 500৳</div></div>
-<div id="food" class="tab p-3 hidden"><div class="border p-3 rounded">বিরিয়ানি - 50৳ লাভ</div></div>
-<div id="course" class="tab p-3 hidden"><div class="border p-3 rounded">কোর্স - 500৳</div></div>
-<div id="daraz" class="tab p-3 hidden"><div class="border p-3 rounded">Daraz - 10% কমিশন</div></div>
-<div id="add" class="tab p-3 hidden"><input placeholder="নাম" class="border w-full p-2 rounded"><button class="bg-black text-white w-full p-2 rounded mt-2">পোস্ট দিন</button></div>
+<!-- 3. CATEGORY FILTER -->
+<div class="flex gap-1 p-2 overflow-x-auto bg-white border-b text-xs">
+<button onclick="filterCat('all')" class="catBtn bg-black text-white px-3 py-1 rounded-full whitespace-nowrap">All</button>
+<button onclick="filterCat('sell')" class="catBtn bg-purple-100 px-3 py-1 rounded-full whitespace-nowrap">🛒 বেচা</button>
+<button onclick="filterCat('mistri')" class="catBtn bg-blue-100 px-3 py-1 rounded-full whitespace-nowrap">🔧 মিস্ত্রী</button>
+<button onclick="filterCat('bari')" class="catBtn bg-green-100 px-3 py-1 rounded-full whitespace-nowrap">🏠 বাড়ি</button>
+<button onclick="filterCat('job')" class="catBtn bg-yellow-100 px-3 py-1 rounded-full whitespace-nowrap">💼 চাকরি</button>
+<button onclick="filterCat('food')" class="catBtn bg-red-100 px-3 py-1 rounded-full whitespace-nowrap">🍔 খাবার</button>
+</div>
+
+<!-- 4. FEED - PORIPURNO POSTS -->
+<div id="feed" class="space-y-2 p-2"></div>
+
+<!-- 5. ADMIN PANEL -->
+<div id="admin" class="p-3 bg-yellow-50 border m-2 rounded-xl hidden">
+<b>🔑 Admin Panel - Rocket Income</b>
+<div class="text-xs mt-1">Total Posts: <span id="totalPosts">0</span> | Boost Income: ৳<span id="income">0</span> | Rocket: 01908202027</div>
+<button onclick="clearAll()" class="bg-red-600 text-white text-xs px-2 py-1 rounded mt-1">সব ডিলিট</button>
+</div>
+
+<!-- 6. BOTTOM NAV -->
+<div class="fixed bottom-0 w-full max-w-[500px] bg-white border-t flex justify-around p-2 text-[11px] z-[100]">
+<button class="flex flex-col items-center"><i class="fa fa-home text-blue-600"></i>Home</button>
+<button class="flex flex-col items-center" onclick="filterCat('sell')"><i class="fa fa-store"></i>Market</button>
+<button class="flex flex-col items-center" onclick="alert('Rocket 01908202027 এ 100৳ পাঠিয়ে Boost করুন')"><i class="fa fa-rocket text-purple-600"></i>Boost</button>
+<button class="flex flex-col items-center" onclick="document.getElementById('admin').classList.toggle('hidden')"><i class="fa fa-user-cog"></i>Admin</button>
+<a href="tel:01908202027" class="flex flex-col items-center bg-green-600 text-white px-3 py-1 rounded-full"><i class="fa fa-phone"></i>Rocket</a>
+</div>
 
 </div>
+
 <script>
-function openTab(name){
- document.querySelectorAll('.tab').forEach(t=>t.classList.add('hidden'));
- document.getElementById(name).classList.remove('hidden');
+// DATA SAVE
+let posts = JSON.parse(localStorage.getItem('sobsob_posts')||'[]');
+let user = localStorage.getItem('sobsob_user')||'';
+let income = parseInt(localStorage.getItem('sobsob_income')||'0');
+let imgData = '';
+
+document.getElementById('imgFile').addEventListener('change', e=>{
+ let r=new FileReader(); r.onload=()=>imgData=r.result; r.readAsDataURL(e.target.files[0]);
+});
+
+function login(){
+ let name=prompt('আপনার নাম লিখুন:'); let phone=prompt('ফোন নম্বর (Rocket):');
+ if(name){ localStorage.setItem('sobsob_user', name); user=name; document.getElementById('userBtn').innerText=name; document.getElementById('myPic').src=`https://ui-avatars.com/api/?name=${name}`; }
 }
-function pay(){alert('Rocket 01908202027 এ টাকা পাঠান'); location.href='tel:01908202027'}
+
+function createPost(){
+ let text=document.getElementById('postText').value;
+ let cat=document.getElementById('postCat').value;
+ let zila=document.getElementById('zila').value;
+ if(!text) return alert('লেখা লিখুন');
+ if(!user) login();
+ let post={id:Date.now(), user:user||'Guest', text:text, cat:cat, zila:zila, img:imgData, likes:0, comments:[], time:new Date().toLocaleString('bn-BD')};
+ posts.unshift(post);
+ localStorage.setItem('sobsob_posts', JSON.stringify(posts));
+ document.getElementById('postText').value=''; imgData=''; render();
+}
+
+function render(filter='all'){
+ let feed=document.getElementById('feed'); feed.innerHTML='';
+ let filtered = filter==='all'? posts : posts.filter(p=>p.cat===filter);
+ if(filtered.length===0) filtered=posts;
+ filtered.forEach(p=>{
+  let div=document.createElement('div'); div.className='bg-white rounded-xl shadow p-3';
+  div.innerHTML=`
+   <div class="flex justify-between"><div class="flex gap-2"><img src="https://ui-avatars.com/api/?name=${p.user}" class="w-8 h-8 rounded-full"><div><b class="text-sm">${p.user}</b><div class="text-[10px] text-gray-500">${p.zila} • ${p.time} • ${p.cat}</div></div></div><button onclick="boostPost(${p.id})" class="text-[10px] bg-purple-100 px-2 py-1 rounded-full">🚀 Boost 100৳</button></div>
+   <div class="mt-2 text-sm">${p.text}</div>
+   ${p.img?`<img src="${p.img}" class="w-full mt-2 rounded-xl max-h-72 object-cover">`:''}
+   <div class="flex justify-around mt-3 border-t pt-2 text-xs">
+     <button onclick="likePost(${p.id})" class="px-2 py-1 bg-gray-100 rounded-full"><i class="fa fa-thumbs-up"></i> Like (${p.likes})</button>
+     <button onclick="commentPost(${p.id})" class="px-2 py-1 bg-gray-100 rounded-full"><i class="fa fa-comment"></i> Comment (${p.comments.length})</button>
+     <button onclick="buyPost(${p.id})" class="px-2 py-1 bg-green-600 text-white rounded-full"><i class="fa fa-shopping-cart"></i> Rocket এ কিনুন</button>
+     <button onclick="sharePost(${p.id})" class="px-2 py-1 bg-blue-100 rounded-full">Share</button>
+   </div>
+   <div class="mt-2 space-y-1 text-xs">${p.comments.map(c=>`<div class="bg-gray-100 p-2 rounded"><b>${c.user}:</b> ${c.text}</div>`).join('')}</div>
+  `; feed.appendChild(div);
+ });
+ document.getElementById('totalPosts').innerText=posts.length;
+ document.getElementById('income').innerText=income;
+ if(user) document.getElementById('userBtn').innerText=user;
+}
+
+function likePost(id){ let p=posts.find(x=>x.id===id); p.likes++; localStorage.setItem('sobsob_posts', JSON.stringify(posts)); render(); }
+function commentPost(id){ let txt=prompt('কমেন্ট লিখুন:'); if(!txt) return; let p=posts.find(x=>x.id===id); p.comments.push({user:user||'Guest', text:txt}); localStorage.setItem('sobsob_posts', JSON.stringify(posts)); render(); }
+function buyPost(id){ let p=posts.find(x=>x.id===id); alert(`${p.text}\n\n${p.zila} এর জন্য Rocket 01908202027 এ টাকা পাঠান। বিক্রেতা: ${p.user}`); location.href='tel:01908202027'; }
+function boostPost(id){ if(confirm('Boost করতে Rocket 01908202027 এ 100৳ পাঠাবেন?')){ income+=100; localStorage.setItem('sobsob_income', income); alert('Boost রিকোয়েস্ট গেছে! 5 মিনিটে আপনার পোস্ট সবার উপরে যাবে।'); render(); } }
+function sharePost(id){ alert('লিংক কপি: https://sobmistri.vercel.app - Share করলে 50৳ বোনাস Rocket এ'); }
+function filterCat(cat){ document.querySelectorAll('.catBtn').forEach(b=>b.classList.remove('bg-black','text-white')); render(cat); }
+function clearAll(){ if(confirm('সব পোস্ট ডিলিট?')){ posts=[]; localStorage.removeItem('sobsob_posts'); render(); } }
+
+// FIRST LOAD DEMO POSTS
+if(posts.length===0){
+ posts=[
+  {id:1, user:'Imran', text:'iPhone 12 বিক্রি হবে - 45k - ফুল ফ্রেশ - পাবনা', cat:'sell', zila:'পাবনা', img:'', likes:12, comments:[{user:'Rahim', text:'দাম কম হবে?'}], time:'এখন'},
+  {id:2, user:'Mistry Karim', text:'🔧 ইলেকট্রিশিয়ান - পাবনা, নড়াইল, নারায়ণগঞ্জ - ৩০ মিনিটে হাজির - কল 01908202027', cat:'mistri', zila:'পাবনা', img:'', likes:5, comments:[], time:'১ ঘন্টা আগে'},
+  {id:3, user:'Bari Malik', text:'🏠 ২ রুম ফ্ল্যাট ভাড়া - নড়াইল - ৮০০০ টাকা - কমিশন ৪০০০', cat:'bari', zila:'নড়াইল', img:'', likes:3, comments:[], time:'২ ঘন্টা আগে'}
+ ];
+ localStorage.setItem('sobsob_posts', JSON.stringify(posts));
+}
+render();
+if(user) document.getElementById('userBtn').innerText=user;
 </script>
-</body></html>
+</body>
+</html>
