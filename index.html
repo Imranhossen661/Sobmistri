@@ -2,7 +2,7 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>ONLY FOR SHOE - ALL STYLE - 36 GHOR | 01908202027</title>
+<title>ONLY FOR SHOE ALL STYLE - 36 GHOR ORDER | 01908202027</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@600;700&display=swap');*{font-family:'Hind Siliguri',sans-serif}.no-scrollbar::-webkit-scrollbar{display:none}</style>
@@ -10,101 +10,163 @@
 <body class="bg-white">
 <div class="max-w-[500px] mx-auto bg-white min-h-screen shadow-2xl pb-[90px]">
 
-<div class="bg-black text-white text-center py-2 text-[11px] font-bold sticky top-0 z-[999] tracking-wider">ONLY FOR SHOE • ALL STYLE • 36 GHOR • 01908202027</div>
+<div class="bg-black text-white text-center py-2 text-[11px] font-bold sticky top-0 z-[999]">ONLY FOR SHOE ALL STYLE • 36 GHOR • ORDER CONFIRM • 01908202027</div>
 
 <div class="bg-white p-3 sticky top-[28px] z-[998] border-b">
 <div class="flex justify-between items-center">
-<div class="flex items-center gap-2"><div class="bg-black text-white w-11 h-11 rounded-full flex items-center justify-center font-black leading-none text-center text-[9px]">ONLY<br>SHOE</div><div><div class="font-black text-[19px] leading-none">ONLY FOR SHOE</div><div class="font-black text-[13px] leading-none text-yellow-500">ALL STYLE</div><div class="text-[9px] text-gray-500">36 ঘর • ঢাকা টু ৬৪ জেলা</div></div></div>
-<select id="district" onchange="render()" class="bg-black text-white text-xs font-bold px-3 py-2 rounded-full"><option value="৬৪ জেলা">৬৪ জেলা</option><option value="ঢাকা">ঢাকা</option><option value="পাবনা">পাবনা</option><option value="নড়াইল">নড়াইল</option></select>
+<div class="flex items-center gap-2"><div class="bg-black text-white w-11 h-11 rounded-full flex items-center justify-center font-black text-[9px] text-center leading-none">ONLY<br>SHOE</div><div><div class="font-black text-[18px] leading-none">ONLY FOR SHOE</div><div class="font-black text-[12px] leading-none text-yellow-500">ALL STYLE • 36 GHOR</div></div></div>
+<select id="district" onchange="render()" class="bg-black text-white text-xs font-bold px-3 py-2 rounded-full"><option value="৬৪ জেলা">৬৪ জেলা</option><option value="ঢাকা">ঢাকা 60৳</option><option value="পাবনা">পাবনা 120৳</option><option value="নড়াইল">নড়াইল 120৳</option></select>
+</div>
+<div class="flex gap-2 mt-3"><input id="search" oninput="render()" placeholder="36 ঘর থেকে খুঁজুন..." class="flex-1 bg-gray-100 rounded-full px-4 py-3 text-sm"><button onclick="openModal()" class="bg-black text-white px-4 rounded-full font-bold text-xs">+ বেচুন</button><button onclick="showOrders()" class="bg-yellow-400 text-black px-3 rounded-full font-black text-xs">📦 <span id="orderCount">0</span> অর্ডার</button></div>
 </div>
 
-<div class="flex gap-2 mt-3 overflow-x-auto no-scrollbar">
-<button onclick="setCat('all')" id="cat-all" class="cat-btn bg-black text-white px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">ALL STYLE 👟</button>
-<button onclick="setCat('sneaker')" id="cat-sneaker" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">Sneaker</button>
-<button onclick="setCat('formal')" id="cat-formal" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">Formal</button>
-<button onclick="setCat('casual')" id="cat-casual" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">Casual</button>
-<button onclick="setCat('boot')" id="cat-boot" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">Boot</button>
-<button onclick="setCat('sports')" id="cat-sports" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">Sports</button>
-<button onclick="setCat('lofer')" id="cat-lofer" class="cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap">Loafer</button>
-</div>
-
-<div class="flex gap-2 mt-3"><input id="search" oninput="render()" placeholder="ONLY FOR SHOE - ALL STYLE থেকে খুঁজুন..." class="flex-1 bg-gray-100 rounded-full px-4 py-3 text-sm"><button onclick="openModal()" class="bg-black text-white px-5 rounded-full font-bold text-xs">+ বেচুন</button></div>
-
-<div class="flex gap-2 mt-3 overflow-x-auto no-scrollbar text-[11px] font-bold">
-<button onclick="setSize('all')" class="size-btn bg-black text-white px-3 py-1.5 rounded-full">সব</button>
-<button onclick="setSize('39')" class="size-btn bg-gray-100 px-3 py-1.5 rounded-full">39</button>
-<button onclick="setSize('40')" class="size-btn bg-gray-100 px-3 py-1.5 rounded-full">40</button>
-<button onclick="setSize('41')" class="size-btn bg-gray-100 px-3 py-1.5 rounded-full">41</button>
-<button onclick="setSize('42')" class="size-btn bg-gray-100 px-3 py-1.5 rounded-full">42</button>
-<button onclick="setSize('43')" class="size-btn bg-gray-100 px-3 py-1.5 rounded-full">43</button>
-<button onclick="setSize('44')" class="size-btn bg-gray-100 px-3 py-1.5 rounded-full">44</button>
-</div>
-</div>
-
-<div class="px-3 py-2 flex justify-between items-center bg-black text-white"><span class="text-xs font-black">👟 ONLY FOR SHOE - ALL STYLE - 36 ঘর</span><span class="text-[11px] bg-yellow-400 text-black px-3 py-1 rounded-full font-black"><span id="totalCount">0</span>/36</span></div>
+<div class="px-3 py-2 flex justify-between items-center bg-black text-white"><span class="text-xs font-black">👟 36 ঘর - প্রতিটা ঘরে ORDER CONFIRM</span><span class="text-[11px] bg-yellow-400 text-black px-3 py-1 rounded-full font-black"><span id="totalCount">0</span>/36</span></div>
 
 <div id="grid" class="grid grid-cols-2 gap-3 p-3"></div>
 
+<!-- UPLOAD MODAL -->
 <div id="modal" class="hidden fixed inset-0 bg-black/90 z-[1000] flex items-center justify-center p-3 overflow-y-auto"><div class="bg-white w-full rounded-3xl p-5 my-5 max-h-[90vh] overflow-y-auto">
-<h2 class="font-black text-[16px]">ONLY FOR SHOE - ALL STYLE - 36 ঘর</h2>
-<p class="text-[11px] text-gray-500">শুধু জুতা - সব স্টাইল - Formal থেকে Sports</p>
-<input id="pName" placeholder="নাম: All Style Nike Jordan" class="w-full mt-3 bg-gray-100 p-3 rounded-xl text-sm font-bold border">
-<div class="grid grid-cols-2 gap-2 mt-2"><input id="pPrice" type="number" placeholder="দাম: 3500" class="bg-gray-100 p-3 rounded-xl text-sm border"><select id="pSize" class="bg-gray-100 p-3 rounded-xl text-sm border"><option value="42" selected>Size 42</option><option value="41">Size 41</option><option value="43">Size 43</option><option value="44">Size 44</option><option value="40">Size 40</option><option value="39">Size 39</option></select></div>
-<div class="grid grid-cols-2 gap-2 mt-2"><select id="pCat" class="bg-gray-100 p-3 rounded-xl text-sm border"><option value="sneaker">Sneaker</option><option value="formal">Formal - Office</option><option value="casual">Casual - Daily</option><option value="boot">Boot</option><option value="sports">Sports</option><option value="lofer">Loafer</option></select><input id="pBrand" placeholder="Brand: All Style / Nike" class="bg-gray-100 p-3 rounded-xl text-sm border" value="All Style"></div>
-<div class="mt-3"><label class="text-xs font-bold">📸 ONLY FOR SHOE - ALL STYLE ছবি (10টা):</label><input type="file" id="pFiles" accept="image/*" multiple class="w-full mt-1 bg-gray-50 border-2 border-dashed border-black p-3 rounded-xl text-sm"><div class="flex justify-between mt-1"><span id="countTxt" class="text-[11px] font-bold">0 ছবি</span><button onclick="clearImages()" class="text-[11px] text-red-600 font-bold">Clear</button></div><div id="preview" class="grid grid-cols-4 gap-2 mt-2 max-h-[150px] overflow-y-auto bg-gray-50 p-2 rounded-xl border"></div></div>
-<div class="flex gap-2 mt-4"><button onclick="closeModal()" class="flex-1 bg-gray-200 p-3 rounded-xl font-bold">বাতিল</button><button id="postBtn" onclick="saveShoe()" class="flex-1 bg-black text-white p-3 rounded-xl font-bold">ONLY SHOE পোস্ট করুন</button></div>
+<h2 class="font-black">ONLY FOR SHOE ALL STYLE - 36 ঘর</h2>
+<input id="pName" placeholder="নাম: All Style Sneaker" class="w-full mt-3 bg-gray-100 p-3 rounded-xl text-sm font-bold border">
+<div class="grid grid-cols-2 gap-2 mt-2"><input id="pPrice" type="number" placeholder="দাম" class="bg-gray-100 p-3 rounded-xl text-sm border"><select id="pSize" class="bg-gray-100 p-3 rounded-xl text-sm border"><option value="42" selected>Size 42</option><option value="41">Size 41</option><option value="43">Size 43</option><option value="44">Size 44</option><option value="40">Size 40</option><option value="39">Size 39</option></select></div>
+<div class="grid grid-cols-2 gap-2 mt-2"><select id="pCat" class="bg-gray-100 p-3 rounded-xl text-sm border"><option value="sneaker">Sneaker</option><option value="formal">Formal</option><option value="casual">Casual</option><option value="boot">Boot</option><option value="sports">Sports</option><option value="lofer">Loafer</option></select><input id="pBrand" placeholder="Brand" value="All Style" class="bg-gray-100 p-3 rounded-xl text-sm border"></div>
+<div class="mt-3"><input type="file" id="pFiles" accept="image/*" multiple class="w-full bg-gray-50 border-2 border-dashed border-black p-3 rounded-xl text-sm"><div id="countTxt" class="text-[11px] font-bold mt-1">0 ছবি</div><div id="preview" class="grid grid-cols-4 gap-2 mt-2 max-h-[120px] overflow-y-auto bg-gray-50 p-2 rounded-xl"></div></div>
+<div class="flex gap-2 mt-4"><button onclick="closeModal()" class="flex-1 bg-gray-200 p-3 rounded-xl font-bold">বাতিল</button><button id="postBtn" onclick="saveShoe()" class="flex-1 bg-black text-white p-3 rounded-xl font-bold">পোস্ট করুন</button></div>
 </div></div>
 
-<div id="viewModal" class="hidden fixed inset-0 bg-white z-[2000] flex flex-col"><div class="flex justify-between p-4 bg-black text-white"><div><div class="font-black text-[12px]">ONLY FOR SHOE - ALL STYLE</div><b id="viewName" class="text-[14px]"></b><div id="viewBrand2" class="text-[11px] text-gray-300"></div></div><button onclick="closeView()" class="text-3xl">×</button></div><div id="viewImages" class="flex-1 overflow-y-auto p-3 flex flex-col gap-3"></div><div class="p-4 border-t bg-white rounded-t-3xl"><div class="flex justify-between items-center"><div id="viewPrice" class="font-black text-2xl"></div><div id="viewSize" class="bg-black text-white px-4 py-2 rounded-full text-sm font-bold"></div></div><div class="grid grid-cols-2 gap-2 mt-4"><a id="waBtn" href="#" target="_blank" class="bg-green-600 text-white p-3 rounded-full font-bold text-center text-sm"><i class="fab fa-whatsapp"></i> WhatsApp</a><a href="tel:01908202027" class="bg-black text-white p-3 rounded-full font-bold text-center text-sm"><i class="fa fa-phone"></i> কল</a></div><div class="text-[11px] text-center mt-2 text-gray-500">ONLY FOR SHOE • ALL STYLE • 36 ঘর • ঢাকা টু ৬৪ • 01908202027</div></div></div>
+<!-- VIEW MODAL -->
+<div id="viewModal" class="hidden fixed inset-0 bg-white z-[2000] flex flex-col"><div class="flex justify-between p-4 bg-black text-white"><div><b id="viewName"></b><div id="viewBrand2" class="text-[11px] text-gray-300"></div></div><button onclick="closeView()" class="text-3xl">×</button></div><div id="viewImages" class="flex-1 overflow-y-auto p-3 flex flex-col gap-3"></div><div class="p-4 border-t bg-white"><div class="flex justify-between"><div id="viewPrice" class="font-black text-2xl"></div><div id="viewSize" class="bg-black text-white px-4 py-2 rounded-full text-sm font-bold"></div></div><div class="grid grid-cols-2 gap-2 mt-4"><button id="viewOrderBtn" onclick="openOrderFromView()" class="bg-yellow-400 text-black p-3 rounded-full font-black text-sm">✅ ORDER CONFIRM</button><a id="waBtn" href="#" target="_blank" class="bg-green-600 text-white p-3 rounded-full font-bold text-center text-sm">WhatsApp</a></div></div></div>
 
-<div class="fixed bottom-0 w-full max-w-[500px] bg-white border-t-2 border-black flex justify-around p-3 text-[10px] font-black z-[999]"><button onclick="setCat('all')" class="flex flex-col items-center"><i class="fa fa-home text-lg"></i>ONLY SHOE</button><button onclick="openModal()" class="bg-black text-white px-6 py-2 rounded-full">+ ALL STYLE</button><a href="https://wa.me/8801908202027?text=ভাই ONLY FOR SHOE ALL STYLE 36 ঘর থেকে জুতা নিতে চাই - sobmistri.vercel.app" target="_blank" class="flex flex-col items-center text-green-600"><i class="fab fa-whatsapp text-[22px]"></i>WhatsApp</a><a href="tel:01908202027" class="flex flex-col items-center"><i class="fa fa-phone text-lg"></i>কল</a></div>
+<!-- ORDER CONFIRM MODAL - PER GHOR -->
+<div id="orderModal" class="hidden fixed inset-0 bg-black/95 z-[3000] flex items-center justify-center p-3 overflow-y-auto"><div class="bg-white w-full rounded-3xl p-5 my-5 max-h-[95vh] overflow-y-auto">
+<div class="flex justify-between items-center"><h2 class="font-black text-lg">✅ ORDER CONFIRM</h2><button onclick="closeOrder()" class="text-2xl">×</button></div>
+<div id="orderProductInfo" class="bg-yellow-50 border-2 border-black rounded-2xl p-3 mt-3 flex gap-3 items-center"></div>
+
+<div class="mt-4 space-y-3">
+<input id="cName" placeholder="আপনার নাম *" class="w-full bg-gray-100 p-3 rounded-xl text-sm border font-bold">
+<input id="cPhone" placeholder="ফোন নম্বর * 01XXXXXXXXX" class="w-full bg-gray-100 p-3 rounded-xl text-sm border font-bold">
+<input id="cAddress" placeholder="ঠিকানা * গ্রাম, থানা, জেলা" class="w-full bg-gray-100 p-3 rounded-xl text-sm border">
+<div class="grid grid-cols-3 gap-2">
+<select id="cSize" class="bg-gray-100 p-3 rounded-xl text-sm border font-bold"><option value="39">Size 39</option><option value="40">Size 40</option><option value="41">Size 41</option><option value="42" selected>Size 42</option><option value="43">Size 43</option><option value="44">Size 44</option></select>
+<select id="cQty" class="bg-gray-100 p-3 rounded-xl text-sm border font-bold"><option value="1">1 জোড়া</option><option value="2">2 জোড়া</option><option value="3">3 জোড়া</option></select>
+<select id="cDistrict" class="bg-gray-100 p-3 rounded-xl text-sm border font-bold"><option value="ঢাকা">ঢাকা 60৳</option><option value="পাবনা" selected>পাবনা 120৳</option><option value="নড়াইল">নড়াইল 120৳</option><option value="৬৪ জেলা">৬৪ জেলা 120৳</option></select>
+</div>
+<div class="bg-black text-white p-3 rounded-xl text-xs flex justify-between"><span>জুতার দাম + ডেলিভারি</span><span id="orderTotal" class="font-black">৳0</span></div>
+<div class="bg-green-50 border border-green-600 p-2 rounded-xl text-[11px]">✅ অর্ডার করলে WhatsApp এ Confirm মেসেজ যাবে - Rocket 01908202027</div>
+</div>
+
+<div class="grid grid-cols-2 gap-2 mt-4"><button onclick="closeOrder()" class="bg-gray-200 p-3 rounded-full font-bold">বাতিল</button><button onclick="confirmOrder()" class="bg-black text-white p-3 rounded-full font-black">✅ ORDER CONFIRM করুন</button></div>
+</div></div>
+
+<!-- ORDERS LIST -->
+<div id="ordersModal" class="hidden fixed inset-0 bg-white z-[4000] flex flex-col"><div class="flex justify-between p-4 bg-black text-white"><b>📦 সব অর্ডার - ONLY FOR SHOE</b><button onclick="closeOrders()" class="text-2xl">×</button></div><div id="ordersList" class="flex-1 overflow-y-auto p-3 space-y-3"></div><div class="p-3 border-t"><button onclick="clearAllOrders()" class="w-full bg-red-600 text-white p-3 rounded-full font-bold">সব অর্ডার Clear</button></div></div>
+
+<div class="fixed bottom-0 w-full max-w-[500px] bg-white border-t-2 border-black flex justify-around p-3 text-[10px] font-black z-[999]"><button onclick="render()" class="flex flex-col items-center"><i class="fa fa-home text-lg"></i>36 ঘর</button><button onclick="openModal()" class="bg-black text-white px-5 py-2 rounded-full">+ জুতা</button><button onclick="showOrders()" class="flex flex-col items-center"><i class="fa fa-shopping-bag text-lg"></i><span id="bottomOrderCount">0 অর্ডার</span></button><a href="https://wa.me/8801908202027" target="_blank" class="flex flex-col items-center text-green-600"><i class="fab fa-whatsapp text-[22px]"></i>WhatsApp</a></div>
 
 </div>
 <script>
 let products = JSON.parse(localStorage.getItem('ONLY_ALL_36')||'[]');
-let curCat='all', curSize='all';
+let orders = JSON.parse(localStorage.getItem('ORDERS_36')||'[]');
+let curCat='all', curSize='all', currentOrderProduct=null, currentViewProduct=null;
 if(products.length===0){
 products=[
-{id:1,name:'Only Shoe All Style Sneaker White',price:3500,size:'42',cat:'sneaker',brand:'All Style',images:['https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400','https://images.unsplash.com/photo-1549298916-b41d501d3772?w=400']},
+{id:1,name:'Only Shoe All Style Sneaker White',price:3500,size:'42',cat:'sneaker',brand:'All Style',images:['https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400']},
 {id:2,name:'Only Shoe All Style Formal Black',price:3200,size:'41',cat:'formal',brand:'All Style',images:['https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=400']},
-{id:3,name:'Only Shoe All Style Casual Daily',price:2800,size:'40',cat:'casual',brand:'All Style',images:['https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=400']},
-{id:4,name:'Only Shoe All Style Boot Winter',price:4800,size:'43',cat:'boot',brand:'All Style',images:['https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=400']},
-{id:5,name:'Only Shoe All Style Sports Running',price:3600,size:'42',cat:'sports',brand:'All Style',images:['https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400']},
-{id:6,name:'Only Shoe All Style Loafer Brown',price:3400,size:'40',cat:'lofer',brand:'All Style',images:['https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=400']},
+{id:3,name:'Only Shoe All Style Casual',price:2800,size:'40',cat:'casual',brand:'All Style',images:['https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=400']},
+{id:4,name:'Only Shoe All Style Boot',price:4800,size:'43',cat:'boot',brand:'All Style',images:['https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=400']},
+{id:5,name:'Only Shoe All Style Sports',price:3600,size:'42',cat:'sports',brand:'All Style',images:['https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400']},
+{id:6,name:'Only Shoe All Style Loafer',price:3400,size:'40',cat:'lofer',brand:'All Style',images:['https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=400']},
 ]; localStorage.setItem('ONLY_ALL_36', JSON.stringify(products));
 }
 let selectedImages=[];
 document.getElementById('pFiles').addEventListener('change', function(e){
  selectedImages=[]; document.getElementById('preview').innerHTML=''; let files=e.target.files; if(files.length>10) files=Array.from(files).slice(0,10);
- document.getElementById('countTxt').innerText=files.length+' ছবি'; document.getElementById('postBtn').innerText='লোড হচ্ছে...'; document.getElementById('postBtn').disabled=true; let loaded=0;
- for(let i=0;i<files.length;i++){ let r=new FileReader(); r.onload=function(ev){ selectedImages.push(ev.target.result); let d=document.createElement('div'); d.innerHTML=`<img src="${ev.target.result}" class="w-full h-16 rounded-lg object-cover border-2 border-black">`; document.getElementById('preview').appendChild(d); loaded++; if(loaded===files.length){ document.getElementById('postBtn').innerText='✅ ONLY SHOE পোস্ট ('+loaded+')'; document.getElementById('postBtn').disabled=false; } }; r.readAsDataURL(files[i]); }
+ document.getElementById('countTxt').innerText=files.length+' ছবি'; let loaded=0;
+ for(let i=0;i<files.length;i++){ let r=new FileReader(); r.onload=function(ev){ selectedImages.push(ev.target.result); let d=document.createElement('div'); d.innerHTML=`<img src="${ev.target.result}" class="w-full h-16 rounded-lg object-cover border">`; document.getElementById('preview').appendChild(d); loaded++; if(loaded===files.length) document.getElementById('postBtn').innerText='✅ পোস্ট ('+loaded+')'; }; r.readAsDataURL(files[i]); }
 });
-function clearImages(){ selectedImages=[]; document.getElementById('preview').innerHTML=''; document.getElementById('pFiles').value=''; document.getElementById('countTxt').innerText='0 ছবি'; }
 function setCat(c){ curCat=c; document.querySelectorAll('.cat-btn').forEach(b=>b.className='cat-btn bg-gray-100 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap'); document.getElementById('cat-'+c).className='cat-btn bg-black text-white px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap'; render(); }
-function setSize(s){ curSize=s; document.querySelectorAll('.size-btn').forEach(b=>{ b.className='size-btn bg-gray-100 px-3 py-1.5 rounded-full'; }); if(event) event.target.className='size-btn bg-black text-white px-3 py-1.5 rounded-full'; render(); }
-function openModal(){ if(products.length>=36) alert('⚠️ 36 ঘর Full! নতুন দিলে পুরাতন 1টা Delete হবে'); document.getElementById('modal').classList.remove('hidden'); }
+function setSize(s){ curSize=s; document.querySelectorAll('.size-btn').forEach(b=>b.className='size-btn bg-gray-100 px-3 py-1.5 rounded-full'); if(event) event.target.className='size-btn bg-black text-white px-3 py-1.5 rounded-full'; render(); }
+function openModal(){ document.getElementById('modal').classList.remove('hidden'); }
 function closeModal(){document.getElementById('modal').classList.add('hidden');}
-function saveShoe(){
- let name=document.getElementById('pName').value; let price=document.getElementById('pPrice').value; let size=document.getElementById('pSize').value; let cat=document.getElementById('pCat').value; let brand=document.getElementById('pBrand').value||'All Style'; if(!name||!price) return alert('নাম ও দাম দিন');
- if(selectedImages.length===0 && document.getElementById('pFiles').files.length>0) return alert('ছবি লোড হচ্ছে...');
- products.unshift({id:Date.now(),name:name,price:parseInt(price),size:size,cat:cat,brand:brand,images:selectedImages.length>0?[...selectedImages]:['https://via.placeholder.com/400?text='+encodeURIComponent(name)]});
- if(products.length>36) products=products.slice(0,36);
- localStorage.setItem('ONLY_ALL_36', JSON.stringify(products)); closeModal(); document.getElementById('pName').value=''; document.getElementById('pPrice').value=''; document.getElementById('pBrand').value='All Style'; document.getElementById('pFiles').value=''; selectedImages=[]; document.getElementById('preview').innerHTML=''; render(); alert('✅ ONLY FOR SHOE - ALL STYLE '+products.length+'/36 Add!');
-}
+function saveShoe(){ let name=document.getElementById('pName').value; let price=document.getElementById('pPrice').value; let size=document.getElementById('pSize').value; let cat=document.getElementById('pCat').value; let brand=document.getElementById('pBrand').value||'All Style'; if(!name||!price) return alert('নাম ও দাম দিন'); products.unshift({id:Date.now(),name:name,price:parseInt(price),size:size,cat:cat,brand:brand,images:selectedImages.length>0?[...selectedImages]:['https://via.placeholder.com/400?text='+encodeURIComponent(name)]}); if(products.length>36) products=products.slice(0,36); localStorage.setItem('ONLY_ALL_36', JSON.stringify(products)); closeModal(); document.getElementById('pName').value=''; document.getElementById('pPrice').value=''; selectedImages=[]; document.getElementById('preview').innerHTML=''; render(); }
+
 function render(){
  let q=document.getElementById('search').value.toLowerCase(); let dist=document.getElementById('district').value; let grid=document.getElementById('grid'); grid.innerHTML='';
  let filtered=products.filter(p=>{ let catOk=curCat==='all'||p.cat===curCat; let sizeOk=curSize==='all'||p.size===curSize; let searchOk=p.name.toLowerCase().includes(q)||p.brand.toLowerCase().includes(q); return catOk&&sizeOk&&searchOk; });
- document.getElementById('totalCount').innerText=filtered.length;
- if(filtered.length===0){ grid.innerHTML='<div class="col-span-2 text-center py-20 text-gray-400">এই ঘরে জুতা নেই - ALL STYLE অন্য ঘরে আছে</div>'; return; }
+ document.getElementById('totalCount').innerText=filtered.length; document.getElementById('orderCount').innerText=orders.length; document.getElementById('bottomOrderCount').innerText=orders.length+' অর্ডার';
+ if(filtered.length===0){ grid.innerHTML='<div class="col-span-2 text-center py-20 text-gray-400">জুতা নেই</div>'; return; }
  filtered.forEach((p,idx)=>{
-  let wa=`https://wa.me/8801908202027?text=👟 ONLY FOR SHOE - ALL STYLE ঘর ${idx+1}/36: ${encodeURIComponent(p.name)} Size ${p.size} - ৳${p.price} - ${dist}`;
-  let div=document.createElement('div'); div.className='bg-white rounded-[24px] overflow-hidden border-2 border-black/5 shadow-sm';
-  div.innerHTML=`<div class="relative cursor-pointer" onclick="openView(${p.id})"><div class="absolute top-2 left-2 bg-black text-white text-[10px] px-2.5 py-1 rounded-full font-black">ঘর ${idx+1}/36</div><img src="${p.images[0]}" class="w-full h-[190px] object-cover"><div class="absolute top-2 right-2 bg-white text-black text-[11px] px-2.5 py-1 rounded-full font-black border-2 border-black">Size ${p.size}</div><div class="absolute bottom-2 left-2 bg-yellow-400 text-black text-[10px] px-2 py-1 rounded-full font-black">ALL STYLE</div><div class="absolute bottom-2 right-2 bg-black text-white text-[10px] px-2 py-1 rounded-full">📸 ${p.images.length}</div></div><div class="p-3"><div class="text-[12px] font-bold truncate">${p.name}</div><div class="flex justify-between mt-1"><div class="font-black text-[16px]">৳${p.price.toLocaleString('bn-BD')}</div><div class="text-[10px] text-gray-500 font-bold">${dist==='৬৪ জেলা'?'ঢাকা টু ৬৪':'ঢাকা → '+dist}</div></div><div class="flex gap-2 mt-2"><a href="${wa}" target="_blank" class="flex-1 bg-black text-white text-xs font-bold py-2.5 rounded-full text-center">WhatsApp</a><a href="tel:01908202027" class="bg-yellow-400 text-black w-10 h-10 rounded-full flex items-center justify-center"><i class="fa fa-phone text-xs"></i></a></div></div>`;
+  let wa=`https://wa.me/8801908202027?text=👟 ঘর ${idx+1}/36: ${encodeURIComponent(p.name)} Size ${p.size} - ৳${p.price}`;
+  let div=document.createElement('div'); div.className='bg-white rounded-[20px] overflow-hidden border-2 border-black/5 shadow-sm flex flex-col';
+  div.innerHTML=`<div class="relative cursor-pointer" onclick="openView(${p.id})"><div class="absolute top-2 left-2 bg-black text-white text-[10px] px-2.5 py-1 rounded-full font-black">ঘর ${idx+1}/36</div><img src="${p.images[0]}" class="w-full h-[160px] object-cover"><div class="absolute top-2 right-2 bg-white text-black text-[10px] px-2 py-1 rounded-full font-black border">Size ${p.size}</div><div class="absolute bottom-2 left-2 bg-yellow-400 text-black text-[9px] px-2 py-1 rounded-full font-black">ALL STYLE</div></div><div class="p-2.5 flex-1 flex flex-col"><div class="text-[12px] font-bold truncate">${p.name}</div><div class="font-black">৳${p.price.toLocaleString('bn-BD')}</div><div class="mt-2 grid grid-cols-1 gap-1.5"><button onclick="openOrder(${p.id})" class="w-full bg-yellow-400 text-black text-[11px] font-black py-2.5 rounded-full">✅ ORDER CONFIRM</button><div class="flex gap-1.5"><a href="${wa}" target="_blank" class="flex-1 bg-black text-white text-[10px] font-bold py-2 rounded-full text-center">WhatsApp</a><a href="tel:01908202027" class="bg-gray-100 w-8 h-8 rounded-full flex items-center justify-center"><i class="fa fa-phone text-[10px]"></i></a></div></div></div>`;
   grid.appendChild(div);
  });
 }
-function openView(id){ let p=products.find(x=>x.id===id); let idx=products.findIndex(x=>x.id===id); document.getElementById('viewName').innerText=`ঘর ${idx+1}/36 - ${p.name}`; document.getElementById('viewBrand2').innerText=`${p.brand} • ${p.cat} • Size ${p.size} • ONLY FOR SHOE - ALL STYLE`; document.getElementById('viewPrice').innerText='৳'+p.price.toLocaleString('bn-BD'); document.getElementById('viewSize').innerText='Size '+p.size; let box=document.getElementById('viewImages'); box.innerHTML=''; p.images.forEach((img,i)=>{ let d=document.createElement('div'); d.innerHTML=`<div class="text-[11px] font-black mb-1 bg-black text-white inline-block px-2 py-1 rounded-full">${i+1}/${p.images.length} - ONLY FOR SHOE</div><img src="${img}" class="w-full rounded-2xl border">`; box.appendChild(d); }); let dist=document.getElementById('district').value; document.getElementById('waBtn').href=`https://wa.me/8801908202027?text=👟 ONLY FOR SHOE - ALL STYLE ঘর ${idx+1}/36: ${encodeURIComponent(p.name)} Size ${p.size} - ৳${p.price} - ${dist} থেকে নিতে চাই%0Aআমার সাইজ: ${p.size}%0Aঠিকানা: ${dist}`; document.getElementById('viewModal').classList.remove('hidden'); }
+
+function openView(id){ let p=products.find(x=>x.id===id); currentViewProduct=p; let idx=products.findIndex(x=>x.id===id); document.getElementById('viewName').innerText=`ঘর ${idx+1}/36 - ${p.name}`; document.getElementById('viewBrand2').innerText=`${p.brand} • Size ${p.size}`; document.getElementById('viewPrice').innerText='৳'+p.price.toLocaleString('bn-BD'); document.getElementById('viewSize').innerText='Size '+p.size; let box=document.getElementById('viewImages'); box.innerHTML=''; p.images.forEach((img,i)=>{ let d=document.createElement('div'); d.innerHTML=`<div class="text-[11px] font-black mb-1 bg-black text-white inline-block px-2 py-1 rounded-full">${i+1}/${p.images.length}</div><img src="${img}" class="w-full rounded-2xl">`; box.appendChild(d); }); let dist=document.getElementById('district').value; document.getElementById('waBtn').href=`https://wa.me/8801908202027?text=👟 ঘর ${idx+1}/36: ${encodeURIComponent(p.name)} Size ${p.size} - ৳${p.price} - ${dist}`; document.getElementById('viewModal').classList.remove('hidden'); }
 function closeView(){document.getElementById('viewModal').classList.add('hidden');}
+function openOrderFromView(){ if(currentViewProduct) openOrder(currentViewProduct.id); closeView(); }
+
+function openOrder(id){
+ let p=products.find(x=>x.id===id); currentOrderProduct=p; let idx=products.findIndex(x=>x.id===id);
+ document.getElementById('orderProductInfo').innerHTML=`<img src="${p.images[0]}" class="w-16 h-16 rounded-xl object-cover border-2 border-black"><div class="flex-1"><div class="font-black text-xs">ঘর ${idx+1}/36 - ${p.name}</div><div class="text-[11px]">Size ${p.size} • ${p.brand} • ৳${p.price}</div><div class="text-[10px] text-gray-500">ONLY FOR SHOE ALL STYLE</div></div>`;
+ document.getElementById('cSize').value=p.size;
+ updateTotal();
+ document.getElementById('orderModal').classList.remove('hidden');
+}
+function closeOrder(){document.getElementById('orderModal').classList.add('hidden');}
+
+document.getElementById('cQty').addEventListener('change', updateTotal);
+document.getElementById('cDistrict').addEventListener('change', updateTotal);
+function updateTotal(){
+ if(!currentOrderProduct) return;
+ let qty=parseInt(document.getElementById('cQty').value)||1;
+ let dist=document.getElementById('cDistrict').value;
+ let delivery=dist==='ঢাকা'?60:120;
+ let total=currentOrderProduct.price*qty+delivery;
+ document.getElementById('orderTotal').innerText='৳'+total.toLocaleString('bn-BD')+' (জুতা ৳'+(currentOrderProduct.price*qty)+' + ডেলিভারি ৳'+delivery+')';
+}
+
+function confirmOrder(){
+ let name=document.getElementById('cName').value.trim();
+ let phone=document.getElementById('cPhone').value.trim();
+ let address=document.getElementById('cAddress').value.trim();
+ let size=document.getElementById('cSize').value;
+ let qty=document.getElementById('cQty').value;
+ let district=document.getElementById('cDistrict').value;
+ if(!name||!phone||!address) return alert('নাম, ফোন, ঠিকানা দিন *');
+ let delivery=district==='ঢাকা'?60:120;
+ let total=currentOrderProduct.price*parseInt(qty)+delivery;
+ let idx=products.findIndex(x=>x.id===currentOrderProduct.id);
+ let order={id:Date.now(),productId:currentOrderProduct.id,ghor:idx+1,productName:currentOrderProduct.name,price:currentOrderProduct.price,size:size,qty:qty,district:district,delivery:delivery,total:total,customerName:name,customerPhone:phone,customerAddress:address,date:new Date().toLocaleString('bn-BD')};
+ orders.unshift(order);
+ localStorage.setItem('ORDERS_36', JSON.stringify(orders));
+ document.getElementById('orderCount').innerText=orders.length;
+ document.getElementById('bottomOrderCount').innerText=orders.length+' অর্ডার';
+ closeOrder();
+ let waMsg=`✅ ORDER CONFIRM - ONLY FOR SHOE ALL STYLE%0A%0Aঘর: ${idx+1}/36%0Aজুতা: ${order.productName}%0ASize: ${size}%0AQty: ${qty} জোড়া%0Aদাম: ৳${order.price} x ${qty} = ৳${order.price*qty}%0Aডেলিভারি: ৳${delivery} (${district})%0Aমোট: ৳${total}%0A%0Aনাম: ${name}%0Aফোন: ${phone}%0Aঠিকানা: ${address}, ${district}%0A%0Asobmistri.vercel.app%0A01908202027`;
+ window.open(`https://wa.me/8801908202027?text=${encodeURIComponent(waMsg)}`,'_blank');
+ alert(`✅ অর্ডার Confirm হয়েছে! ঘর ${idx+1}/36 - ৳${total}%0AWhatsApp এ মেসেজ চলে গেছে - 01908202027`);
+ document.getElementById('cName').value=''; document.getElementById('cPhone').value=''; document.getElementById('cAddress').value='';
+ render();
+}
+
+function showOrders(){
+ let list=document.getElementById('ordersList'); list.innerHTML='';
+ if(orders.length===0){ list.innerHTML='<div class="text-center py-20 text-gray-400">কোন অর্ডার নেই - প্রতিটা ঘরে ORDER CONFIRM বাটন চাপুন</div>'; }
+ else{
+  orders.forEach((o, i)=>{
+   let div=document.createElement('div'); div.className='bg-white border-2 border-black rounded-2xl p-3';
+   div.innerHTML=`<div class="flex justify-between"><b class="text-xs">ঘর ${o.ghor}/36 - ${o.productName}</b><span class="text-[10px] bg-yellow-400 px-2 py-1 rounded-full font-black">৳${o.total}</span></div><div class="text-[11px] mt-1">Size ${o.size} • ${o.qty} জোড়া • ${o.district} • ডেলিভারি ৳${o.delivery}</div><div class="text-[11px] font-bold mt-1">${o.customerName} • ${o.customerPhone}</div><div class="text-[10px] text-gray-500">${o.customerAddress}</div><div class="text-[9px] text-gray-400 mt-1">${o.date}</div><div class="flex gap-2 mt-2"><a href="https://wa.me/${o.customerPhone.replace('0','880')}?text=ভাই আপনার ঘর ${o.ghor}/36 ${o.productName} অর্ডার Confirm - ৳${o.total} - ঢাকা টু ${o.district}" target="_blank" class="flex-1 bg-green-600 text-white text-[11px] font-bold py-2 rounded-full text-center">Customer WhatsApp</a><button onclick="deleteOrder(${o.id})" class="bg-red-100 text-red-600 px-3 py-2 rounded-full text-[11px] font-bold">Delete</button></div>`;
+   list.appendChild(div);
+  });
+ }
+ document.getElementById('ordersModal').classList.remove('hidden');
+}
+function closeOrders(){document.getElementById('ordersModal').classList.add('hidden');}
+function deleteOrder(id){ if(confirm('এই অর্ডার Delete করবেন?')){ orders=orders.filter(o=>o.id!==id); localStorage.setItem('ORDERS_36', JSON.stringify(orders)); showOrders(); render(); } }
+function clearAllOrders(){ if(confirm('সব অর্ডার Clear করবেন?')){ orders=[]; localStorage.setItem('ORDERS_36', JSON.stringify(orders)); showOrders(); render(); } }
+
 render();
 </script>
 </body>
